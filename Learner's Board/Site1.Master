@@ -1,0 +1,100 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site1.master.cs" Inherits="Learner_s_Board.Site1" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title></title>
+    <%--bootstrap css --%>
+    <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+    <%--datatables css --%>
+    <link href="datatables/css/jquery.dataTables.min.css" rel="stylesheet" />
+    <%--fontawesome css --%>
+    <link href="fontawesome/css/all.css" rel="stylesheet" />
+    <%--custom css --%>
+    <link href="css/customstylesheet.css" rel="stylesheet" />
+    <%--jquery js --%>
+    <script src="bootstrap/js/jquery-3.2.1.slim.min.js"></script>
+    <%--popper js --%>
+    <script src="bootstrap/js/bootstrap.min.js"></script>
+    <%--bootstrap js --%>
+    <script src="Bootstrap%204/js/bootstrap.min.js"></script>
+    <%--datatables js --%>
+    <script src="datatables/js/jquery.dataTables.min.js"></script>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body style="color: black;">
+    <form id="form1" runat="server">
+        <div>
+            
+            <nav class="navbar navbar-expand-lg bg-light navbar-light" >
+                <a class="navbar-brand" href="homepage.aspx" >
+                    <img src="imgs/logo.png" width="50" height="50" />
+                    Learner's Board
+                </a>
+
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                   
+
+                    <ul class="navbar-nav ml-auto">
+                        
+                        <li class="nav-item active">
+                            <asp:LinkButton class="nav-link" ID="LinkButton1" runat="server" OnClick="LinkButton1_Click" CausesValidation="False">Login</asp:LinkButton>
+                        </li>
+                        <li class="nav-item active">
+                            <asp:LinkButton class="nav-link" ID="LinkButton2" runat="server" OnClick="LinkButton2_Click" CausesValidation="False">Sign Up</asp:LinkButton>
+                        </li>
+                        
+                        <li class="nav-item active">
+                            <asp:LinkButton class="nav-link" ID="LinkButton5" runat="server" OnClick="LinkButton5_Click" CausesValidation="False">Add Institute</asp:LinkButton>
+                        </li>
+                        
+                        <li class="nav-item active">
+                            <asp:LinkButton class="nav-link" ID="LinkButton7" runat="server" OnClick="LinkButton7_Click" CausesValidation="False">Add Coordinator</asp:LinkButton>
+                        </li>
+
+                        <li class="nav-item active">
+                            <asp:LinkButton class="nav-link" ID="LinkButton4" runat="server" CausesValidation="False">Hello user</asp:LinkButton>
+
+                        </li>
+                        
+                        <li class="nav-item active">
+                            <asp:LinkButton class="nav-link" ID="LinkButton3" runat="server" OnClick="LinkButton3_Click" CausesValidation="False">Logout</asp:LinkButton>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+            
+        </div>
+
+        <!-- Main Content Placeholder -->
+        <div>
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+
+            </asp:ContentPlaceHolder>
+        </div>
+        <!-- Main Content Placeholder -->
+
+        <!-- Footer -->
+        <footer>
+            <div id="footer2" class="container-fluid">
+                <div class="row">
+                    <div class="col-xs-12 col-sm-12 col-md-12 text-center">
+                        <img width="50px" style="margin-left:15px;margin-right:15px;" src="imgs/youtube.png"/>
+                        <img width="50px" style="margin-left:15px;margin-right:15px;" src="imgs/facebook.png"/>
+                        <img width="50px" style="margin-left:15px;margin-right:15px;" src="imgs/instagram.png"/>
+                       
+                    </div>
+                </div>
+            </div>
+
+        </footer>
+        <!-- ./Footer -->
+    </form>
+</body>
+</html>
