@@ -74,9 +74,8 @@ namespace Learner_s_Board
                     con.Open();
                 }
 
-                SqlCommand cmd = new SqlCommand("INSERT INTO institute_master_tbl(id,name,affiliation,type,city,state) values(@id,@name,@affiliation,@type,@city,@state)", con);
+                SqlCommand cmd = new SqlCommand("INSERT INTO institute_master_tbl(name,affiliation,type,city,state) values(@name,@affiliation,@type,@city,@state)", con);
 
-                cmd.Parameters.AddWithValue("@id", TextBox1.Text.Trim());
                 cmd.Parameters.AddWithValue("@name", TextBox2.Text.Trim());
                 cmd.Parameters.AddWithValue("@affiliation", TextBox4.Text.Trim());
                 cmd.Parameters.AddWithValue("@type", DropDownList1.SelectedItem.Value);
@@ -105,7 +104,7 @@ namespace Learner_s_Board
                     con.Open();
                 }
 
-                SqlCommand cmd = new SqlCommand("SELECT * from institute_master_tbl where id='" + TextBox1.Text.Trim() + "';", con);
+                SqlCommand cmd = new SqlCommand("SELECT * from institute_master_tbl where institute_id='" + TextBox1.Text.Trim() + "';", con);
                 SqlDataAdapter da = new SqlDataAdapter(cmd);
                 DataTable dt = new DataTable();
                 da.Fill(dt);
@@ -138,7 +137,7 @@ namespace Learner_s_Board
                     con.Open();
                 }
 
-                SqlCommand cmd = new SqlCommand("UPDATE institute_master_tbl SET name=@name,affiliation=@affiliation,type=@type,city=@city,state=@state WHERE id='" + TextBox1.Text.Trim() + "'", con);
+                SqlCommand cmd = new SqlCommand("UPDATE institute_master_tbl SET name=@name,affiliation=@affiliation,type=@type,city=@city,state=@state WHERE institute_id='" + TextBox1.Text.Trim() + "'", con);
 
                 cmd.Parameters.AddWithValue("@name", TextBox2.Text.Trim());
                 cmd.Parameters.AddWithValue("@affiliation", TextBox4.Text.Trim());
@@ -168,7 +167,7 @@ namespace Learner_s_Board
                     con.Open();
                 }
 
-                SqlCommand cmd = new SqlCommand("DELETE from institute_master_tbl WHERE id='" + TextBox1.Text.Trim() + "'", con);
+                SqlCommand cmd = new SqlCommand("DELETE from institute_master_tbl WHERE institute_id='" + TextBox1.Text.Trim() + "'", con);
 
                 cmd.ExecuteNonQuery();
                 con.Close();
@@ -193,7 +192,7 @@ namespace Learner_s_Board
                     con.Open();
                 }
 
-                SqlCommand cmd = new SqlCommand("SELECT * from institute_master_tbl where id='" + TextBox1.Text.Trim() + "';", con);
+                SqlCommand cmd = new SqlCommand("SELECT * from institute_master_tbl where institute_id='" + TextBox1.Text.Trim() + "';", con);
                 SqlDataAdapter da = new SqlDataAdapter(cmd);
                 DataTable dt = new DataTable();
                 da.Fill(dt);

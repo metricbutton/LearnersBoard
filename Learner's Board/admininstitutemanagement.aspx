@@ -8,7 +8,7 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <br><br>
-    <div class="container">
+    <div class="container-fluid">
         <div class="row">
             <div class="col-md-5">
 
@@ -44,7 +44,7 @@
                                 <div class="form-group">
                                     <div class="input-group">
                                         <asp:TextBox CssClass="form-control" ID="TextBox1" runat="server" placeholder="ID"></asp:TextBox>
-                                        <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ErrorMessage="ID is required" ControlToValidate="TextBox1" Display="Dynamic"></asp:RequiredFieldValidator>
+                                        <%--<asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ErrorMessage="ID is required" ControlToValidate="TextBox1" Display="Dynamic"></asp:RequiredFieldValidator>--%>
                                         <asp:Button class="btn btn-primary" ID="Button1" runat="server" Text="Go" OnClick="Button1_Click" CausesValidation="False" />
                                     </div>
                                 </div>
@@ -148,7 +148,7 @@
                                 <asp:Button ID="Button3" class="btn btn-lg btn-block btn-warning" runat="server" Text="Update" OnClick="Button3_Click" />
                             </div>
                             <div class="col-4">
-                                <asp:Button ID="Button4" class="btn btn-lg btn-block btn-danger" runat="server" Text="Delete" OnClick="Button4_Click" />
+                                <asp:Button ID="Button4" class="btn btn-lg btn-block btn-danger" runat="server" Text="Delete" OnClick="Button4_Click" CausesValidation="False" />
                             </div>
                         </div>
 
@@ -179,9 +179,9 @@
                         <div class="row">
                             <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:learnersboardDBConnectionString %>" SelectCommand="SELECT * FROM [institute_master_tbl]"></asp:SqlDataSource>
                             <div class="col">
-                                <asp:GridView class="table table-striped table-bordered" ID="GridView1" runat="server" AutoGenerateColumns="False" DataSourceID="SqlDataSource1">
+                                <asp:GridView class="table table-striped table-bordered" ID="GridView1" runat="server" AutoGenerateColumns="False" DataSourceID="SqlDataSource1" DataKeyNames="institute_id">
                                     <Columns>
-                                        <asp:BoundField DataField="id" HeaderText="id" SortExpression="id" />
+                                        <asp:BoundField DataField="institute_id" HeaderText="institute_id" SortExpression="institute_id" InsertVisible="False" ReadOnly="True" />
                                         <asp:BoundField DataField="name" HeaderText="name" SortExpression="name" />
                                         <asp:BoundField DataField="affiliation" HeaderText="affiliation" SortExpression="affiliation" />
                                         <asp:BoundField DataField="type" HeaderText="type" SortExpression="type" />
