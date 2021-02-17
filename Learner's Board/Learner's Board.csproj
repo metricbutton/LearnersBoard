@@ -74,6 +74,8 @@
     <Content Include="bootstrap\js\bootstrap.min.js" />
     <Content Include="bootstrap\js\jquery-3.2.1.slim.min.js" />
     <Content Include="bootstrap\js\popper.min.js" />
+    <Content Include="coordinaterdegreemanagement.aspx" />
+    <Content Include="coordinaterspecializationmanagement.aspx" />
     <Content Include="coordinatorlogin.aspx" />
     <Content Include="css\customstylesheet.css" />
     <Content Include="datatables\css\jquery.dataTables.min.css" />
@@ -1737,6 +1739,7 @@
     <Content Include="imgs\book-online.png" />
     <Content Include="imgs\books.png" />
     <Content Include="imgs\centralized.png" />
+    <Content Include="imgs\degree.png" />
     <Content Include="imgs\coordinator.png" />
     <Content Include="imgs\digital-data.png" />
     <Content Include="imgs\digital-inventory.png" />
@@ -1780,6 +1783,20 @@
     </Compile>
     <Compile Include="adminlogin.aspx.designer.cs">
       <DependentUpon>adminlogin.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="coordinaterdegreemanagement.aspx.cs">
+      <DependentUpon>coordinaterdegreemanagement.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="coordinaterdegreemanagement.aspx.designer.cs">
+      <DependentUpon>coordinaterdegreemanagement.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="coordinaterspecializationmanagement.aspx.cs">
+      <DependentUpon>coordinaterspecializationmanagement.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="coordinaterspecializationmanagement.aspx.designer.cs">
+      <DependentUpon>coordinaterspecializationmanagement.aspx</DependentUpon>
     </Compile>
     <Compile Include="coordinatorlogin.aspx.cs">
       <DependentUpon>coordinatorlogin.aspx</DependentUpon>
