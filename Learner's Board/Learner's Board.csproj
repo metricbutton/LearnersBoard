@@ -74,6 +74,8 @@
     <Content Include="bootstrap\js\bootstrap.min.js" />
     <Content Include="bootstrap\js\jquery-3.2.1.slim.min.js" />
     <Content Include="bootstrap\js\popper.min.js" />
+    <Content Include="content\toastr.css" />
+    <Content Include="content\toastr.min.css" />
     <Content Include="coordinatordegreemanagement.aspx" />
     <Content Include="coordinatorspecializationmanagement.aspx" />
     <Content Include="coordinatorlogin.aspx" />
@@ -1760,6 +1762,13 @@
     <Content Include="learnerlogin.aspx" />
     <Content Include="learnersignup.aspx" />
     <Content Include="logintypes.aspx" />
+    <Content Include="content\toastr.scss" />
+    <Content Include="content\toastr.less" />
+    <None Include="Scripts\jquery-1.6.3-vsdoc.js" />
+    <Content Include="Scripts\jquery-1.6.3.js" />
+    <Content Include="Scripts\jquery-1.6.3.min.js" />
+    <Content Include="Scripts\toastr.js" />
+    <Content Include="Scripts\toastr.min.js" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>

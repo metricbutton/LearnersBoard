@@ -5,6 +5,9 @@
 <html>
 <head runat="server">
     <title></title>
+    <%--toastr css --%>
+    <link href="content/toastr.css" rel="stylesheet" />
+    <link href="content/toastr.min.css" rel="stylesheet" />
     <%--bootstrap css --%>
     <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet" />
     <%--datatables css --%>
@@ -13,6 +16,11 @@
     <link href="fontawesome/css/all.css" rel="stylesheet" />
     <%--custom css --%>
     <link href="css/customstylesheet.css" rel="stylesheet" />
+
+    <%--toastr js --%>
+    <script src="Scripts/jquery-1.6.3.js"></script>
+    <script src="Scripts/toastr.js"></script>
+    <script src="Scripts/toastr.min.js"></script>
     <%--jquery js --%>
     <script src="bootstrap/js/jquery-3.2.1.slim.min.js"></script>
     <%--popper js --%>
@@ -21,6 +29,8 @@
     <script src="Bootstrap%204/js/bootstrap.min.js"></script>
     <%--datatables js --%>
     <script src="datatables/js/jquery.dataTables.min.js"></script>
+
+    
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
 </head>

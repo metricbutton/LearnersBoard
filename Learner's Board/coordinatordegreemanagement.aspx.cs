@@ -21,6 +21,8 @@ namespace Learner_s_Board
         protected void Button1_Click(object sender, EventArgs e) //Go
         {
             getDegreeByID();
+
+            Page.ClientScript.RegisterStartupScript(this.GetType(), "toastr_message", "toastr.success('Please Enter Name', 'Error')", true);
         }
 
         protected void Button2_Click(object sender, EventArgs e) //Add
