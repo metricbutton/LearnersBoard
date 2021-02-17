@@ -67,15 +67,15 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="admincoordinatermanagement.aspx" />
+    <Content Include="admincoordinatormanagement.aspx" />
     <Content Include="admininstitutemanagement.aspx" />
     <Content Include="adminlogin.aspx" />
     <Content Include="bootstrap\css\bootstrap.min.css" />
     <Content Include="bootstrap\js\bootstrap.min.js" />
     <Content Include="bootstrap\js\jquery-3.2.1.slim.min.js" />
     <Content Include="bootstrap\js\popper.min.js" />
-    <Content Include="coordinaterdegreemanagement.aspx" />
-    <Content Include="coordinaterspecializationmanagement.aspx" />
+    <Content Include="coordinatordegreemanagement.aspx" />
+    <Content Include="coordinatorspecializationmanagement.aspx" />
     <Content Include="coordinatorlogin.aspx" />
     <Content Include="css\customstylesheet.css" />
     <Content Include="datatables\css\jquery.dataTables.min.css" />
@@ -1763,12 +1763,12 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="admincoordinatermanagement.aspx.cs">
-      <DependentUpon>admincoordinatermanagement.aspx</DependentUpon>
+    <Compile Include="admincoordinatormanagement.aspx.cs">
+      <DependentUpon>admincoordinatormanagement.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="admincoordinatermanagement.aspx.designer.cs">
-      <DependentUpon>admincoordinatermanagement.aspx</DependentUpon>
+    <Compile Include="admincoordinatormanagement.aspx.designer.cs">
+      <DependentUpon>admincoordinatormanagement.aspx</DependentUpon>
     </Compile>
     <Compile Include="admininstitutemanagement.aspx.cs">
       <DependentUpon>admininstitutemanagement.aspx</DependentUpon>
@@ -1784,19 +1784,19 @@
     <Compile Include="adminlogin.aspx.designer.cs">
       <DependentUpon>adminlogin.aspx</DependentUpon>
     </Compile>
-    <Compile Include="coordinaterdegreemanagement.aspx.cs">
-      <DependentUpon>coordinaterdegreemanagement.aspx</DependentUpon>
+    <Compile Include="coordinatordegreemanagement.aspx.cs">
+      <DependentUpon>coordinatordegreemanagement.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="coordinaterdegreemanagement.aspx.designer.cs">
-      <DependentUpon>coordinaterdegreemanagement.aspx</DependentUpon>
+    <Compile Include="coordinatordegreemanagement.aspx.designer.cs">
+      <DependentUpon>coordinatordegreemanagement.aspx</DependentUpon>
     </Compile>
-    <Compile Include="coordinaterspecializationmanagement.aspx.cs">
-      <DependentUpon>coordinaterspecializationmanagement.aspx</DependentUpon>
+    <Compile Include="coordinatorspecializationmanagement.aspx.cs">
+      <DependentUpon>coordinatorspecializationmanagement.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="coordinaterspecializationmanagement.aspx.designer.cs">
-      <DependentUpon>coordinaterspecializationmanagement.aspx</DependentUpon>
+    <Compile Include="coordinatorspecializationmanagement.aspx.designer.cs">
+      <DependentUpon>coordinatorspecializationmanagement.aspx</DependentUpon>
     </Compile>
     <Compile Include="coordinatorlogin.aspx.cs">
       <DependentUpon>coordinatorlogin.aspx</DependentUpon>

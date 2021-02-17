@@ -10,84 +10,90 @@ using System.Web.UI.WebControls;
 
 namespace Learner_s_Board
 {
-    public partial class coordinaterspecializationmanagement1 : System.Web.UI.Page
+    public partial class admincoordinatormanagement : System.Web.UI.Page
     {
         string strcon = ConfigurationManager.ConnectionStrings["con"].ConnectionString;
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
 
+            { 
+            GridView1.DataBind();
+            SqlConnection con = new SqlConnection(strcon);
+            con.Open();
+
+            SqlCommand com = new SqlCommand("select institute_id,name from institute_master_tbl", con) ;
+
+            SqlDataReader sdr = com.ExecuteReader();
+            while(sdr.Read())
             {
-                GridView1.DataBind();
-                SqlConnection con = new SqlConnection(strcon);
-                con.Open();
+                ListItem item = new ListItem();
+                item.Text = sdr["name"].ToString();
+                //item.Value = sdr["name"].ToString();
+                item.Value = sdr["institute_id"].ToString();
+                DropDownList1.Items.Add(item);
 
-                SqlCommand com = new SqlCommand("select degree_id,degree_name from degree_master_tbl", con);
+            }
 
-                SqlDataReader sdr = com.ExecuteReader();
-                while (sdr.Read())
-                {
-                    ListItem item = new ListItem();
-                    item.Text = sdr["degree_name"].ToString();
-                    //item.Value = sdr["name"].ToString();
-                    item.Value = sdr["degree_id"].ToString();
-                    DropDownList1.Items.Add(item);
-
-                }
-
-
-                con.Close();
-                DropDownList1.Items.Insert(0, new ListItem("Select Degree", "0"));
+            
+            con.Close();
+            DropDownList1.Items.Insert(0, new ListItem("Select Institute", "0"));
             }
         }
 
-        protected void Button1_Click(object sender, EventArgs e) //Go
+        
+        
+        //add button
+        protected void Button2_Click(object sender, EventArgs e)
         {
-            getSpecializationByID();
-        }
-
-        protected void Button2_Click(object sender, EventArgs e) //Add
-        {
-            if (checkIfSpecializationExists())
+            if (checkIfCoordinatorExists())
             {
-                Response.Write("<script>alert('Specialization with this ID already Exist. You cannot add another Specialization with the same Specialization ID');</script>");
+                Response.Write("<script>alert('Coordinator with this ID already Exist. You cannot add another Coordinator with the same Coordinator ID');</script>");
             }
             else
             {
-                addNewSpecialization();
+                addNewCoordinator();
                 GridView1.DataBind();
             }
         }
 
-        protected void Button3_Click(object sender, EventArgs e) //Update
+        //update button
+        protected void Button3_Click(object sender, EventArgs e)
         {
-            if (checkIfSpecializationExists())
+            if (checkIfCoordinatorExists())
             {
-                updateSpecialization();
-                GridView1.DataBind();
-
-            }
-            else
-            {
-                Response.Write("<script>alert('Specialization does not exist');</script>");
-            }
-        }
-
-        protected void Button4_Click(object sender, EventArgs e) //Delete
-        {
-            if (checkIfSpecializationExists())
-            {
-                deleteSpecialization();
+                updateCoordinator();
                 GridView1.DataBind();
 
             }
             else
             {
-                Response.Write("<script>alert('Specialization does not exist');</script>");
+                Response.Write("<script>alert('Coordinator does not exist');</script>");
             }
         }
 
-        void addNewSpecialization()
+        //delete button
+        protected void Button4_Click(object sender, EventArgs e)
+        {
+            if (checkIfCoordinatorExists())
+            {
+                deleteCoordinator();
+                GridView1.DataBind();
+
+            }
+            else
+            {
+                Response.Write("<script>alert('Coordinator does not exist');</script>");
+            }
+        }
+
+        //go button
+        protected void Button1_Click(object sender, EventArgs e)
+        {
+            getCoordinatorByID();
+        }
+
+        void addNewCoordinator()
         {
             try
             {
@@ -97,14 +103,17 @@ namespace Learner_s_Board
                     con.Open();
                 }
 
-                SqlCommand cmd = new SqlCommand("INSERT INTO specialization_master_tbl(specialization_name,degree_id) values(@specialization_name,@degree_id)", con);
+                SqlCommand cmd = new SqlCommand("INSERT INTO coordinator_master_tbl(name,institute_id,email,username,password) values(@name,@institute_id,@email,@username,@password)", con);
 
-                cmd.Parameters.AddWithValue("@specialization_name", TextBox2.Text.Trim());
-                cmd.Parameters.AddWithValue("@degree_id", DropDownList1.SelectedItem.Value);
+                cmd.Parameters.AddWithValue("@name", TextBox2.Text.Trim());
+                cmd.Parameters.AddWithValue("@institute_id", DropDownList1.SelectedItem.Value);
+                cmd.Parameters.AddWithValue("@email", TextBox6.Text.Trim());
+                cmd.Parameters.AddWithValue("@username", TextBox3.Text.Trim());
+                cmd.Parameters.AddWithValue("@password", TextBox5.Text.Trim());
 
                 cmd.ExecuteNonQuery();
                 con.Close();
-                Response.Write("<script>alert('Specialization added Successfully');</script>");
+                Response.Write("<script>alert('Coordinator added Successfully');</script>");
                 clearForm();
                 GridView1.DataBind();
             }
@@ -114,7 +123,7 @@ namespace Learner_s_Board
             }
         }
 
-        bool checkIfSpecializationExists()
+        bool checkIfCoordinatorExists()
         {
             try
             {
@@ -124,7 +133,7 @@ namespace Learner_s_Board
                     con.Open();
                 }
 
-                SqlCommand cmd = new SqlCommand("SELECT * from specialization_master_tbl where specialization_id='" + TextBox1.Text.Trim() + "';", con);
+                SqlCommand cmd = new SqlCommand("SELECT * from coordinator_master_tbl where id='" + TextBox1.Text.Trim() + "';", con);
                 SqlDataAdapter da = new SqlDataAdapter(cmd);
                 DataTable dt = new DataTable();
                 da.Fill(dt);
@@ -147,7 +156,7 @@ namespace Learner_s_Board
             }
         }
 
-        void updateSpecialization()
+        void updateCoordinator()
         {
             try
             {
@@ -157,14 +166,15 @@ namespace Learner_s_Board
                     con.Open();
                 }
 
-                SqlCommand cmd = new SqlCommand("UPDATE specialization_master_tbl SET specialization_name=@specialization_name,degree_id=@degree_id WHERE specialization_id='" + TextBox1.Text.Trim() + "'", con);
+                SqlCommand cmd = new SqlCommand("UPDATE coordinator_master_tbl SET name=@name,institute_id=@institute_id WHERE id='" + TextBox1.Text.Trim() + "'", con);
 
-                cmd.Parameters.AddWithValue("@specialization_name", TextBox2.Text.Trim());
-                cmd.Parameters.AddWithValue("@degree_id", DropDownList1.SelectedItem.Value);
+                cmd.Parameters.AddWithValue("@name", TextBox2.Text.Trim());
+                cmd.Parameters.AddWithValue("@institute_id", DropDownList1.SelectedItem.Value);
+                cmd.Parameters.AddWithValue("@email", TextBox6.Text.Trim());
 
                 cmd.ExecuteNonQuery();
                 con.Close();
-                Response.Write("<script>alert('Specialization Updated Successfully');</script>");
+                Response.Write("<script>alert('Coordinator Updated Successfully');</script>");
                 clearForm();
                 GridView1.DataBind();
             }
@@ -174,7 +184,7 @@ namespace Learner_s_Board
             }
         }
 
-        void deleteSpecialization()
+        void deleteCoordinator()
         {
             try
             {
@@ -184,11 +194,11 @@ namespace Learner_s_Board
                     con.Open();
                 }
 
-                SqlCommand cmd = new SqlCommand("DELETE from specialization_master_tbl WHERE specialization_id='" + TextBox1.Text.Trim() + "'", con);
+                SqlCommand cmd = new SqlCommand("DELETE from coordinator_master_tbl WHERE id='" + TextBox1.Text.Trim() + "'", con);
 
                 cmd.ExecuteNonQuery();
                 con.Close();
-                Response.Write("<script>alert('Specialization Deleted Successfully');</script>");
+                Response.Write("<script>alert('Coordinator Deleted Successfully');</script>");
                 clearForm();
                 GridView1.DataBind();
 
@@ -199,7 +209,7 @@ namespace Learner_s_Board
             }
         }
 
-        void getSpecializationByID()
+        void getCoordinatorByID()
         {
             try
             {
@@ -209,7 +219,7 @@ namespace Learner_s_Board
                     con.Open();
                 }
 
-                SqlCommand cmd = new SqlCommand("SELECT * from specialization_master_tbl where specialization_id='" + TextBox1.Text.Trim() + "';", con);
+                SqlCommand cmd = new SqlCommand("SELECT * from coordinator_master_tbl where id='" + TextBox1.Text.Trim() + "';", con);
                 SqlDataAdapter da = new SqlDataAdapter(cmd);
                 DataTable dt = new DataTable();
                 da.Fill(dt);
@@ -223,9 +233,10 @@ namespace Learner_s_Board
                     TextBox2.Text = dt.Rows[0][1].ToString();
 
                     //TextBox4.Text = dt.Rows[0][2].ToString();
+                    TextBox6.Text = dt.Rows[0][3].ToString();
                     String id = dt.Rows[0][2].ToString();
 
-                    SqlCommand cmd1 = new SqlCommand("SELECT * from degree_master_tbl where degree_id='" + id + "';", con);
+                    SqlCommand cmd1 = new SqlCommand("SELECT * from institute_master_tbl where institute_id='" + id + "';", con);
                     SqlDataAdapter da1 = new SqlDataAdapter(cmd1);
                     DataTable dt1 = new DataTable();
                     da1.Fill(dt1);
@@ -236,7 +247,7 @@ namespace Learner_s_Board
                 }
                 else
                 {
-                    Response.Write("<script>alert('Invalid Specialization ID');</script>");
+                    Response.Write("<script>alert('Invalid Coordinator ID');</script>");
                 }
 
 
@@ -252,9 +263,13 @@ namespace Learner_s_Board
         {
             TextBox1.Text = "";
             TextBox2.Text = "";
-            //DropDownList1.Items.FindByText("Select Degree").Selected = true;
+            TextBox3.Text = "";
+            //DropDownList1.SelectedValue = "select";
             DropDownList1.SelectedIndex = -1;
-            //DropDownList1.SelectedValue = "";
+            TextBox5.Text = "";
+            TextBox6.Text = "";
         }
+
+        
     }
 }

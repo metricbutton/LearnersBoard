@@ -10,7 +10,7 @@ using System.Web.UI.WebControls;
 
 namespace Learner_s_Board
 {
-    public partial class coordinaterdegreemanagement : System.Web.UI.Page
+    public partial class coordinatordegreemanagement : System.Web.UI.Page
     {
         string strcon = ConfigurationManager.ConnectionStrings["con"].ConnectionString;
         protected void Page_Load(object sender, EventArgs e)

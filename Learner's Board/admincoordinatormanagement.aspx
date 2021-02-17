@@ -1,7 +1,9 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site1.Master" AutoEventWireup="true" CodeBehind="coordinaterdegreemanagement.aspx.cs" Inherits="Learner_s_Board.coordinaterdegreemanagement" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site1.Master" AutoEventWireup="true" CodeBehind="admincoordinatormanagement.aspx.cs" Inherits="Learner_s_Board.admincoordinatormanagement" %>
+
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <script type="text/javascript">
         $(document).ready(function () {
+
             $(".table").prepend($("<thead></thead>").append($(this).find("tr:first"))).dataTable();
         });
     </script>
@@ -19,7 +21,7 @@
                         <div class="row">
                             <div class="col">
                                 <center>
-                                        <h4>Degree Details</h4>
+                                        <h4>Coordinator Details</h4>
                                     </center>
                             </div>
                         </div>
@@ -27,7 +29,7 @@
                         <div class="row">
                             <div class="col">
                                 <center>
-                                        <img width="100px" src="imgs/degree.png" />
+                                        <img width="100px" src="imgs/add-user1.png" />
                                        
                                     </center>
                             </div>
@@ -41,20 +43,20 @@
 
                         <div class="row">
                             <div class="col-md-4">
-                                <label>Degree ID</label>
+                                <label>Coordinator ID</label>
                                 <div class="form-group">
                                     <div class="input-group">
                                         <asp:TextBox CssClass="form-control" ID="TextBox1" runat="server" placeholder="ID"></asp:TextBox>
                                         <%--<asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ErrorMessage="ID is required" ControlToValidate="TextBox1" Display="Dynamic"></asp:RequiredFieldValidator>--%>
-                                        <asp:Button class="btn btn-primary" ID="Button1" runat="server" Text="Go" CausesValidation="False" onClick="Button1_Click"/>
+                                        <asp:Button class="btn btn-primary" ID="Button1" runat="server" Text="Go" OnClick="Button1_Click" CausesValidation="False" />
                                     </div>
                                 </div>
                             </div>
 
                             <div class="col-md-8">
-                                <label>Degree Name</label>
+                                <label>Coordinator Name</label>
                                 <div class="form-group">
-                                    <asp:TextBox CssClass="form-control" ID="TextBox2" runat="server" placeholder="Degree Name"></asp:TextBox>
+                                    <asp:TextBox CssClass="form-control" ID="TextBox2" runat="server" placeholder="Coordinator Name"></asp:TextBox>
                                     <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ErrorMessage="Name is required" ControlToValidate="TextBox2" Display="Dynamic"></asp:RequiredFieldValidator>
 
                                 </div>
@@ -64,10 +66,10 @@
                         <div class="row">
 
                             <div class="col-md-12">
-                                <label>Short Name</label>
+                                <label>Institute Name</label>
                                 <div class="form-group">
-                                    <asp:TextBox CssClass="form-control" ID="TextBox4" runat="server" placeholder="Short Name" ></asp:TextBox>
-                                    <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ErrorMessage="Short name is required" ControlToValidate="TextBox4" Display="Dynamic"></asp:RequiredFieldValidator>
+                                    <asp:DropDownList class="form-control" ID="DropDownList1" runat="server"></asp:DropDownList>
+                                    <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ErrorMessage="Institute is required" ControlToValidate="DropDownList1" Display="Dynamic" InitialValue="Select Institute"></asp:RequiredFieldValidator>
 
                                 </div>
                             </div>
@@ -76,13 +78,35 @@
                         <div class="row">
 
                             <div class="col-md-12">
-                                <label>Term</label>
+                                <label>Email ID</label>
                                 <div class="form-group">
-                                    <asp:TextBox CssClass="form-control" ID="TextBox6" runat="server" placeholder="Term in years"></asp:TextBox>
+                                    <asp:TextBox CssClass="form-control" ID="TextBox6" runat="server" placeholder="Email ID" TextMode="Email"></asp:TextBox>
                                     <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" ErrorMessage="Email is required" ControlToValidate="TextBox6" Display="Dynamic"></asp:RequiredFieldValidator>
 
                                 </div>
                             </div>
+                        </div>
+
+                        <div class="row">
+
+                            <div class="col-md-6">
+                                <label>Username</label>
+                                <div class="form-group">
+                                    <asp:TextBox CssClass="form-control" ID="TextBox3" runat="server" placeholder="Username"></asp:TextBox>
+
+                                </div>
+                            </div>
+
+                            <div class="col-md-6">
+                                <label>Password</label>
+                                <div class="form-group">
+                                    <asp:TextBox CssClass="form-control" ID="TextBox5" runat="server" placeholder="Password"></asp:TextBox>
+
+                                </div>
+                            </div>
+
+
+
                         </div>
 
 
@@ -95,7 +119,7 @@
                                 <asp:Button ID="Button3" class="btn btn-lg btn-block btn-warning" runat="server" Text="Update" OnClick="Button3_Click" />
                             </div>
                             <div class="col-4">
-                                <asp:Button ID="Button4" class="btn btn-lg btn-block btn-danger" runat="server" Text="Delete" Onclick="Button4_Click"/>
+                                <asp:Button ID="Button4" class="btn btn-lg btn-block btn-danger" runat="server" Text="Delete" OnClick="Button4_Click" />
                             </div>
                         </div>
 
@@ -116,7 +140,7 @@
                         <div class="row">
                             <div class="col">
                                 <center>
-                                        <h4>Degree List</h4>
+                                        <h4>Coordinator List</h4>
                                     </center>
                             </div>
                         </div>
@@ -124,14 +148,16 @@
 
 
                         <div class="row">
-                            <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:learnersboardDBConnectionString3 %>" SelectCommand="SELECT * FROM [degree_master_tbl]"></asp:SqlDataSource>
+                            <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:learnersboardDBConnectionString2 %>" SelectCommand="SELECT * FROM [coordinator_master_tbl]"></asp:SqlDataSource>
                             <div class="col">
-                                <asp:GridView class="table table-striped table-bordered" ID="GridView1" runat="server" AutoGenerateColumns="False" DataKeyNames="degree_id" DataSourceID="SqlDataSource1">
+                                <asp:GridView class="table table-striped table-bordered" ID="GridView1" runat="server" AutoGenerateColumns="False" DataSourceID="SqlDataSource1" DataKeyNames="id">
                                     <Columns>
-                                        <asp:BoundField DataField="degree_id" HeaderText="degree_id" InsertVisible="False" ReadOnly="True" SortExpression="degree_id" />
-                                        <asp:BoundField DataField="degree_name" HeaderText="degree_name" SortExpression="degree_name" />
-                                        <asp:BoundField DataField="short_name" HeaderText="short_name" SortExpression="short_name" />
-                                        <asp:BoundField DataField="degree_term" HeaderText="degree_term" SortExpression="degree_term" />
+                                        <asp:BoundField DataField="id" HeaderText="id" SortExpression="id" InsertVisible="False" ReadOnly="True" />
+                                        <asp:BoundField DataField="name" HeaderText="name" SortExpression="name" />
+                                        <asp:BoundField DataField="institute_id" HeaderText="institute_id" SortExpression="institute_id" />
+                                        <asp:BoundField DataField="email" HeaderText="email" SortExpression="email" />
+                                        <asp:BoundField DataField="username" HeaderText="username" SortExpression="username" />
+                                        <asp:BoundField DataField="password" HeaderText="password" SortExpression="password" />
                                     </Columns>
                                 </asp:GridView>
                             </div>
@@ -148,5 +174,4 @@
 
         </div>
     </div>
-
 </asp:Content>

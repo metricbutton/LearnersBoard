@@ -106,7 +106,7 @@ namespace Learner_s_Board
 
         protected void LinkButton7_Click(object sender, EventArgs e)
         {
-            Response.Redirect("admincoordinatermanagement.aspx");
+            Response.Redirect("admincoordinatormanagement.aspx");
         }
 
         protected void LinkButton3_Click(object sender, EventArgs e)
