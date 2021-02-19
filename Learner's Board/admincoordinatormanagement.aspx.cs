@@ -48,7 +48,8 @@ namespace Learner_s_Board
         {
             if (checkIfCoordinatorExists())
             {
-                Response.Write("<script>alert('Coordinator with this ID already Exist. You cannot add another Coordinator with the same Coordinator ID');</script>");
+                Page.ClientScript.RegisterStartupScript(this.GetType(), "toastr_message", "toastr.warning('Coordinator with this ID already Exist. You cannot add another Coordinator with the same Coordinator ID')", true);
+                //Response.Write("<script>alert('Coordinator with this ID already Exist. You cannot add another Coordinator with the same Coordinator ID');</script>");
             }
             else
             {
@@ -68,7 +69,8 @@ namespace Learner_s_Board
             }
             else
             {
-                Response.Write("<script>alert('Coordinator does not exist');</script>");
+                Page.ClientScript.RegisterStartupScript(this.GetType(), "toastr_message", "toastr.error('Coordinator does not exist')", true);
+                //Response.Write("<script>alert('Coordinator does not exist');</script>");
             }
         }
 
@@ -83,7 +85,8 @@ namespace Learner_s_Board
             }
             else
             {
-                Response.Write("<script>alert('Coordinator does not exist');</script>");
+                Page.ClientScript.RegisterStartupScript(this.GetType(), "toastr_message", "toastr.error('Coordinator does not exist')", true);
+                //Response.Write("<script>alert('Coordinator does not exist');</script>");
             }
         }
 
@@ -113,7 +116,8 @@ namespace Learner_s_Board
 
                 cmd.ExecuteNonQuery();
                 con.Close();
-                Response.Write("<script>alert('Coordinator added Successfully');</script>");
+                Page.ClientScript.RegisterStartupScript(this.GetType(), "toastr_message", "toastr.success('Coordinator added Successfully')", true);
+                //Response.Write("<script>alert('Coordinator added Successfully');</script>");
                 clearForm();
                 GridView1.DataBind();
             }
@@ -174,7 +178,8 @@ namespace Learner_s_Board
 
                 cmd.ExecuteNonQuery();
                 con.Close();
-                Response.Write("<script>alert('Coordinator Updated Successfully');</script>");
+                Page.ClientScript.RegisterStartupScript(this.GetType(), "toastr_message", "toastr.success('Coordinator Updated Successfully')", true);
+                //Response.Write("<script>alert('Coordinator Updated Successfully');</script>");
                 clearForm();
                 GridView1.DataBind();
             }
@@ -198,7 +203,8 @@ namespace Learner_s_Board
 
                 cmd.ExecuteNonQuery();
                 con.Close();
-                Response.Write("<script>alert('Coordinator Deleted Successfully');</script>");
+                Page.ClientScript.RegisterStartupScript(this.GetType(), "toastr_message", "toastr.error('Coordinator Deleted Successfully')", true);
+                //Response.Write("<script>alert('Coordinator Deleted Successfully');</script>");
                 clearForm();
                 GridView1.DataBind();
 
@@ -247,7 +253,8 @@ namespace Learner_s_Board
                 }
                 else
                 {
-                    Response.Write("<script>alert('Invalid Coordinator ID');</script>");
+                    Page.ClientScript.RegisterStartupScript(this.GetType(), "toastr_message", "toastr.warning('Invalid Coordinator ID')", true);
+                    //Response.Write("<script>alert('Invalid Coordinator ID');</script>");
                 }
 
 

@@ -50,7 +50,8 @@ namespace Learner_s_Board
         {
             if (checkIfSpecializationExists())
             {
-                Response.Write("<script>alert('Specialization with this ID already Exist. You cannot add another Specialization with the same Specialization ID');</script>");
+                Page.ClientScript.RegisterStartupScript(this.GetType(), "toastr_message", "toastr.warning('Specialization with this ID already Exist. You cannot add another Specialization with the same Specialization ID')", true);
+                //Response.Write("<script>alert('Specialization with this ID already Exist. You cannot add another Specialization with the same Specialization ID');</script>");
             }
             else
             {
@@ -69,7 +70,8 @@ namespace Learner_s_Board
             }
             else
             {
-                Response.Write("<script>alert('Specialization does not exist');</script>");
+                Page.ClientScript.RegisterStartupScript(this.GetType(), "toastr_message", "toastr.error('Specialization does not exist')", true);
+                //Response.Write("<script>alert('Specialization does not exist');</script>");
             }
         }
 
@@ -83,7 +85,8 @@ namespace Learner_s_Board
             }
             else
             {
-                Response.Write("<script>alert('Specialization does not exist');</script>");
+                Page.ClientScript.RegisterStartupScript(this.GetType(), "toastr_message", "toastr.error('Specialization does not exist')", true);
+                //Response.Write("<script>alert('Specialization does not exist');</script>");
             }
         }
 
@@ -104,7 +107,8 @@ namespace Learner_s_Board
 
                 cmd.ExecuteNonQuery();
                 con.Close();
-                Response.Write("<script>alert('Specialization added Successfully');</script>");
+                Page.ClientScript.RegisterStartupScript(this.GetType(), "toastr_message", "toastr.success('Specialization added Successfully')", true);
+                //Response.Write("<script>alert('Specialization added Successfully');</script>");
                 clearForm();
                 GridView1.DataBind();
             }
@@ -164,7 +168,8 @@ namespace Learner_s_Board
 
                 cmd.ExecuteNonQuery();
                 con.Close();
-                Response.Write("<script>alert('Specialization Updated Successfully');</script>");
+                Page.ClientScript.RegisterStartupScript(this.GetType(), "toastr_message", "toastr.success('Specialization Updated Successfully')", true);
+                //Response.Write("<script>alert('Specialization Updated Successfully');</script>");
                 clearForm();
                 GridView1.DataBind();
             }
@@ -188,7 +193,8 @@ namespace Learner_s_Board
 
                 cmd.ExecuteNonQuery();
                 con.Close();
-                Response.Write("<script>alert('Specialization Deleted Successfully');</script>");
+                Page.ClientScript.RegisterStartupScript(this.GetType(), "toastr_message", "toastr.error('Specialization Deleted Successfully')", true);
+                //Response.Write("<script>alert('Specialization Deleted Successfully');</script>");
                 clearForm();
                 GridView1.DataBind();
 
@@ -236,7 +242,8 @@ namespace Learner_s_Board
                 }
                 else
                 {
-                    Response.Write("<script>alert('Invalid Specialization ID');</script>");
+                    Page.ClientScript.RegisterStartupScript(this.GetType(), "toastr_message", "toastr.warning('Invalid Specialization ID')", true);
+                    //Response.Write("<script>alert('Invalid Specialization ID');</script>");
                 }
 
 

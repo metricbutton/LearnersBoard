@@ -22,7 +22,8 @@ namespace Learner_s_Board
         {
             if (checkIfInstituteExists())
             {
-                Response.Write("<script>alert('Institute with this ID already Exist. You cannot add another Institute with the same Institute ID');</script>");
+                Page.ClientScript.RegisterStartupScript(this.GetType(), "toastr_message", "toastr.warning('Institute with this ID already Exist. You cannot add another Institute with the same Institute ID')", true);
+                //Response.Write("<script>alert('Institute with this ID already Exist. You cannot add another Institute with the same Institute ID');</script>");
             }
             else
             {
@@ -40,7 +41,8 @@ namespace Learner_s_Board
             }
             else
             {
-                Response.Write("<script>alert('Institute does not exist');</script>");
+                Page.ClientScript.RegisterStartupScript(this.GetType(), "toastr_message", "toastr.error('Institute does not exist')", true);
+                //Response.Write("<script>alert('Institute does not exist');</script>");
             }
         }
 
@@ -54,7 +56,8 @@ namespace Learner_s_Board
             }
             else
             {
-                Response.Write("<script>alert('Institute does not exist');</script>");
+                Page.ClientScript.RegisterStartupScript(this.GetType(), "toastr_message", "toastr.error('Institute does not exist')", true);
+                //Response.Write("<script>alert('Institute does not exist');</script>");
             }
         }
 
@@ -84,7 +87,8 @@ namespace Learner_s_Board
 
                 cmd.ExecuteNonQuery();
                 con.Close();
-                Response.Write("<script>alert('Institute added Successfully');</script>");
+                Page.ClientScript.RegisterStartupScript(this.GetType(), "toastr_message", "toastr.success('Institute added Successfully')", true);
+                //Response.Write("<script>alert('Institute added Successfully');</script>");
                 clearForm();
                 GridView1.DataBind();
             }
@@ -147,7 +151,8 @@ namespace Learner_s_Board
 
                 cmd.ExecuteNonQuery();
                 con.Close();
-                Response.Write("<script>alert('Institute Updated Successfully');</script>");
+                Page.ClientScript.RegisterStartupScript(this.GetType(), "toastr_message", "toastr.success('Institute Updated Successfully')", true);
+                //Response.Write("<script>alert('Institute Updated Successfully');</script>");
                 clearForm();
                 GridView1.DataBind();
             }
@@ -171,7 +176,8 @@ namespace Learner_s_Board
 
                 cmd.ExecuteNonQuery();
                 con.Close();
-                Response.Write("<script>alert('Institute Deleted Successfully');</script>");
+                Page.ClientScript.RegisterStartupScript(this.GetType(), "toastr_message", "toastr.error('Institute Deleted Successfully')", true);
+                //Response.Write("<script>alert('Institute Deleted Successfully');</script>");
                 clearForm();
                 GridView1.DataBind();
 
@@ -207,7 +213,8 @@ namespace Learner_s_Board
                 }
                 else
                 {
-                    Response.Write("<script>alert('Invalid Institute ID');</script>");
+                    Page.ClientScript.RegisterStartupScript(this.GetType(), "toastr_message", "toastr.warning('Invalid Institute ID')", true);
+                    //Response.Write("<script>alert('Invalid Institute ID');</script>");
                 }
 
 

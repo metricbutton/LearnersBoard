@@ -82,7 +82,7 @@
                     <center>
                      <img width="150px" src="imgs/approved.png"/>
                      <h4>Get It Verified</h4>
-                    <p class="text-center">Your details will be verified by respective Corrdinator</p>
+                    <p class="text-center">Your details will be verified by respective Coordinator</p>
                     </center>
                 </div>
             </div>

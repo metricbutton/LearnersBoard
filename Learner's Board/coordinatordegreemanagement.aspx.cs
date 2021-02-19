@@ -21,16 +21,13 @@ namespace Learner_s_Board
         protected void Button1_Click(object sender, EventArgs e) //Go
         {
             getDegreeByID();
-
-            //Page.ClientScript.RegisterStartupScript(this.GetType(), "toastr_message", "toastr.success('Please Enter Name', 'Error')", true);
-            Page.ClientScript.RegisterStartupScript(this.GetType(), "toastr_message", "toastr.success('Please Enter Name')", true);
         }
 
         protected void Button2_Click(object sender, EventArgs e) //Add
         {
             if (checkIfDegreeExists())
             {
-                Page.ClientScript.RegisterStartupScript(this.GetType(), "toastr_message", "toastr.error('Degree with this ID already Exist. You cannot add another Degree with the same Degree ID')", true);
+                Page.ClientScript.RegisterStartupScript(this.GetType(), "toastr_message", "toastr.warning('Degree with this ID already Exist. You cannot add another Degree with the same Degree ID')", true);
                 //Response.Write("<script>alert('Degree with this ID already Exist. You cannot add another Degree with the same Degree ID');</script>");
             }
             else
