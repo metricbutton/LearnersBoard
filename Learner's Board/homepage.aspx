@@ -7,6 +7,7 @@
         <img src="imgs/uppercover.jpg" class="img-fluid"/>
     </section>
 
+    <br>
     <div class="container text-white">
         <div class="row">
             <div class="col-12">
