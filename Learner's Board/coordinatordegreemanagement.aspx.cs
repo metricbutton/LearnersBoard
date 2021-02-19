@@ -22,14 +22,16 @@ namespace Learner_s_Board
         {
             getDegreeByID();
 
-            Page.ClientScript.RegisterStartupScript(this.GetType(), "toastr_message", "toastr.success('Please Enter Name', 'Error')", true);
+            //Page.ClientScript.RegisterStartupScript(this.GetType(), "toastr_message", "toastr.success('Please Enter Name', 'Error')", true);
+            Page.ClientScript.RegisterStartupScript(this.GetType(), "toastr_message", "toastr.success('Please Enter Name')", true);
         }
 
         protected void Button2_Click(object sender, EventArgs e) //Add
         {
             if (checkIfDegreeExists())
             {
-                Response.Write("<script>alert('Degree with this ID already Exist. You cannot add another Degree with the same Degree ID');</script>");
+                Page.ClientScript.RegisterStartupScript(this.GetType(), "toastr_message", "toastr.error('Degree with this ID already Exist. You cannot add another Degree with the same Degree ID')", true);
+                //Response.Write("<script>alert('Degree with this ID already Exist. You cannot add another Degree with the same Degree ID');</script>");
             }
             else
             {
@@ -46,7 +48,8 @@ namespace Learner_s_Board
             }
             else
             {
-                Response.Write("<script>alert('Degree does not exist');</script>");
+                Page.ClientScript.RegisterStartupScript(this.GetType(), "toastr_message", "toastr.error('Degree does not exist')", true);
+                //Response.Write("<script>alert('Degree does not exist');</script>");
             }
         }
 
@@ -59,7 +62,8 @@ namespace Learner_s_Board
             }
             else
             {
-                Response.Write("<script>alert('Degree does not exist');</script>");
+                Page.ClientScript.RegisterStartupScript(this.GetType(), "toastr_message", "toastr.error('Degree does not exist')", true);
+                //Response.Write("<script>alert('Degree does not exist');</script>");
             }
         }
 
@@ -114,7 +118,8 @@ namespace Learner_s_Board
 
                 cmd.ExecuteNonQuery();
                 con.Close();
-                Response.Write("<script>alert('Degree added Successfully');</script>");
+                Page.ClientScript.RegisterStartupScript(this.GetType(), "toastr_message", "toastr.success('Degree added Successfully')", true);
+                //Response.Write("<script>alert('Degree added Successfully');</script>");
                 clearForm();
                 GridView1.DataBind();
             }
@@ -142,7 +147,8 @@ namespace Learner_s_Board
 
                 cmd.ExecuteNonQuery();
                 con.Close();
-                Response.Write("<script>alert('Degree Updated Successfully');</script>");
+                Page.ClientScript.RegisterStartupScript(this.GetType(), "toastr_message", "toastr.success('Degree Updated Successfully')", true);
+                //Response.Write("<script>alert('Degree Updated Successfully');</script>");
                 clearForm();
                 GridView1.DataBind();
             }
@@ -166,7 +172,8 @@ namespace Learner_s_Board
 
                 cmd.ExecuteNonQuery();
                 con.Close();
-                Response.Write("<script>alert('Degree Deleted Successfully');</script>");
+                Page.ClientScript.RegisterStartupScript(this.GetType(), "toastr_message", "toastr.error('Degree Deleted Successfully')", true);
+                //Response.Write("<script>alert('Degree Deleted Successfully');</script>");
                 clearForm();
                 GridView1.DataBind();
 
@@ -200,7 +207,8 @@ namespace Learner_s_Board
                 }
                 else
                 {
-                    Response.Write("<script>alert('Invalid Degree ID');</script>");
+                    Page.ClientScript.RegisterStartupScript(this.GetType(), "toastr_message", "toastr.warning('Invalid Degree ID')", true);
+                    //Response.Write("<script>alert('Invalid Degree ID');</script>");
                 }
 
 
