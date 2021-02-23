@@ -18,7 +18,7 @@ namespace Learner_s_Board
             SqlConnection con = new SqlConnection(strcon);
             con.Open();
 
-            SqlCommand com = new SqlCommand("select id,name from institute_master_tbl", con);  
+            SqlCommand com = new SqlCommand("select institute_id,name from institute_master_tbl", con);  
 
             SqlDataReader sdr = com.ExecuteReader();
             while (sdr.Read())
