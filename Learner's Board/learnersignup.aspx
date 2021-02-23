@@ -144,6 +144,29 @@
                             </div>
                         </div>
 
+                        
+
+                        <div class="row">
+                            <div class="col">
+                                <label>Degree</label>
+                                <div class="form-group">
+                                    <asp:DropDownList class="form-control" ID="DropDownList3" AutoPostBack="True" runat="server" OnSelectedIndexChanged="DropDownList3_SelectedIndexChanged"></asp:DropDownList>
+                                     <asp:RequiredFieldValidator ID="RequiredFieldValidator11" runat="server" ErrorMessage="Degree is required" ControlToValidate="DropDownList2" Display="Dynamic"></asp:RequiredFieldValidator>
+
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row" runat="server" id="div">
+                            <div class="col">
+                                <label>Specialization</label>
+                                <div class="form-group">
+                                    <asp:DropDownList class="form-control" AppendDataBoundItems="true" AutoPostBack="True"  ID="DropDownList4" runat="server"></asp:DropDownList>
+
+                                </div>
+                            </div>
+                        </div>
+
                         <div class="row">
 
                             <div class="col">
