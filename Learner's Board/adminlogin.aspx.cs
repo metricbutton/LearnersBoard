@@ -34,14 +34,16 @@ namespace Learner_s_Board
                 {
                     while (dr.Read())
                     {
-                        Response.Write("<script>alert('Login Successful');</script>");
+                        Page.ClientScript.RegisterStartupScript(this.GetType(), "toastr_message", "toastr.success('Login Successful')", true);
+                        //Response.Write("<script>alert('Login Successful');</script>");
                         Session["role"] = "admin";
                     }
                     Response.Redirect("homepage.aspx");
                 }
                 else
                 {
-                    Response.Write("<script>alert('Invalid credentials');</script>");
+                    Page.ClientScript.RegisterStartupScript(this.GetType(), "toastr_message", "toastr.error('Invalid credentials')", true);
+                    //Response.Write("<script>alert('Invalid credentials');</script>");
                 }
 
             }

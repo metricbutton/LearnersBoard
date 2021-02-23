@@ -34,7 +34,8 @@ namespace Learner_s_Board
                 {
                     while (dr.Read())
                     {
-                        Response.Write("<script>alert('Login Successful');</script>");
+                        Page.ClientScript.RegisterStartupScript(this.GetType(), "toastr_message", "toastr.success('Login Successful')", true);
+                        //Response.Write("<script>alert('Login Successful');</script>");
                         Session["username"] = dr.GetValue(4).ToString();
                         Session["fullname"] = dr.GetValue(1).ToString();
                         Session["role"] = "coordinator";
@@ -43,7 +44,8 @@ namespace Learner_s_Board
                 }
                 else
                 {
-                    Response.Write("<script>alert('Invalid credentials');</script>");
+                    Page.ClientScript.RegisterStartupScript(this.GetType(), "toastr_message", "toastr.error('Invalid credentials')", true);
+                    //Response.Write("<script>alert('Invalid credentials');</script>");
                 }
 
             }
