@@ -27,6 +27,30 @@
 
         </div>
 
+        <br>
+        <br>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="card bg-default" style="width: 400px">
+                    <img class="card-img-top" src="imgs/learner.png" alt="Card image" style="width: 100%">
+                    <div class="card-body text-center">
+                        <a href="learnerlogin.aspx" class="btn btn-success stretched-link">Learner Login</a>
+                    </div>
+                </div>
+
+            </div>
+             <div class="col-md-6">
+                <div class="card bg-danger" style="width: 400px">
+                    <img class="card-img-top" src="imgs/admin.png" alt="Card image" style="width: 100%">
+                    <div class="card-body text-center">
+                        <a href="adminlogin.aspx" class="btn btn-success stretched-link">Admin Login</a>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
     </div>
     <br><br>
 </asp:Content>

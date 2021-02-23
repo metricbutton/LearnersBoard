@@ -42,20 +42,22 @@ namespace Learner_s_Board
 
 
                 }
-                else if (Session["role"].Equals("user"))
+                else if (Session["role"].Equals("learner"))
                 {
-                    LinkButton1.Visible = true; // user login link button
-                    LinkButton2.Visible = true; // sign up link button
+                    LinkButton1.Visible = false; // user login link button
+                    LinkButton2.Visible = false; // sign up link button
 
                     LinkButton6.Visible = false; // degree
                     LinkButton8.Visible = false; // specialization
                     LinkButton5.Visible = false; // institute
                     LinkButton7.Visible = false; // Coordinator
-                    LinkButton3.Visible = false; // logout link button
+                    LinkButton3.Visible = true; // logout link button
                     LinkButton4.Text = "Hello " + Session["username"].ToString();
+                    LinkButton4.Visible = true;
+                    //LinkButton4.Text = "Hello " + Session["username"].ToString();
 
 
-                    
+
 
                 }
 

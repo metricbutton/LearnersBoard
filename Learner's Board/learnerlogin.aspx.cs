@@ -28,7 +28,7 @@ namespace Learner_s_Board
                     con.Open();
 
                 }
-                SqlCommand cmd = new SqlCommand("select * from learner_master_tbl where learner_id='" + TextBox1.Text.Trim() + "' AND password='" + TextBox2.Text.Trim() + "'", con);
+                SqlCommand cmd = new SqlCommand("select * from learner_master_tbl where username='" + TextBox1.Text.Trim() + "' AND password='" + TextBox2.Text.Trim() + "'", con);
                 SqlDataReader dr = cmd.ExecuteReader();
                 if (dr.HasRows)
                 {
