@@ -137,8 +137,19 @@
                             <div class="col">
                                 <label>Institute</label>
                                 <div class="form-group">
-                                    <asp:DropDownList class="form-control" ID="DropDownList2" runat="server"></asp:DropDownList>
+                                    <asp:DropDownList class="form-control" ID="DropDownList2" runat="server" AutoPostBack="True" OnSelectedIndexChanged="DropDownList2_SelectedIndexChanged"></asp:DropDownList>
                                      <asp:RequiredFieldValidator ID="RequiredFieldValidator8" runat="server" ErrorMessage="Institute is required" ControlToValidate="DropDownList2" Display="Dynamic"></asp:RequiredFieldValidator>
+
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col">
+                                <label>Coordinator</label>
+                                <div class="form-group">
+                                    <asp:DropDownList class="form-control" ID="DropDownList6" AppendDataBoundItems="true" AutoPostBack="True" runat="server" ></asp:DropDownList>
+                                     <asp:RequiredFieldValidator ID="RequiredFieldValidator12" runat="server" ErrorMessage="Degree is required" ControlToValidate="DropDownList2" Display="Dynamic"></asp:RequiredFieldValidator>
 
                                 </div>
                             </div>

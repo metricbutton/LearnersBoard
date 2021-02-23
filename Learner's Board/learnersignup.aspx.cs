@@ -62,8 +62,8 @@ namespace Learner_s_Board
         {
             if (checkMemberExists())
             {
-
-                Response.Write("<script>alert('Member Already Exist with this Member ID, try other ID');</script>");
+                Page.ClientScript.RegisterStartupScript(this.GetType(), "toastr_message", "toastr.warning('Member Already Exist with this Username, try other Username')", true);
+                //Response.Write("<script>alert('Member Already Exist with this Member ID, try other ID');</script>");
             }
             else
             {
@@ -120,8 +120,8 @@ namespace Learner_s_Board
                     con.Open();
                 }
 
-                SqlCommand cmd = new SqlCommand("INSERT INTO learner_master_tbl(full_name,dob,contact_no,email,state,city,pincode,institute_id,username,password,degree_id,specialization_id) " +
-                    "values(@full_name,@dob,@contact_no,@email,@state,@city,@pincode,@institute_id,@username,@password,@degree_id,@specialization_id)", con);
+                SqlCommand cmd = new SqlCommand("INSERT INTO learner_master_tbl(full_name,dob,contact_no,email,state,city,pincode,institute_id,username,password,degree_id,specialization_id,coordinator_id) " +
+                    "values(@full_name,@dob,@contact_no,@email,@state,@city,@pincode,@institute_id,@username,@password,@degree_id,@specialization_id,@coordinator_id)", con);
 
                 cmd.Parameters.AddWithValue("@full_name", TextBox1.Text.Trim());
                 cmd.Parameters.AddWithValue("@dob", TextBox2.Text.Trim());
@@ -142,10 +142,12 @@ namespace Learner_s_Board
                 {
                     cmd.Parameters.AddWithValue("@specialization_id", DropDownList4.SelectedItem.Value);
                 }
+                cmd.Parameters.AddWithValue("@coordinator_id", DropDownList6.SelectedItem.Value);
 
                 cmd.ExecuteNonQuery();
                 con.Close();
-                Response.Write("<script>alert('Sign Up Successful. Go to User Login to Login');</script>");
+                Page.ClientScript.RegisterStartupScript(this.GetType(), "toastr_message", "toastr.success('Sign Up Successful. Go to User Login to Login')", true);
+                //Response.Write("<script>alert('Sign Up Successful. Go to User Login to Login');</script>");
 
             }
             catch (Exception ex)
@@ -186,6 +188,27 @@ namespace Learner_s_Board
 
             con.Close();
             
+        }
+
+        protected void DropDownList2_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            DropDownList6.Items.Clear();
+            SqlConnection con = new SqlConnection(strcon);
+            con.Open();
+
+            SqlCommand com = new SqlCommand("select id,name from coordinator_master_tbl WHERE institute_id='" + DropDownList2.SelectedItem.Value + "'", con);
+
+            SqlDataReader sdr = com.ExecuteReader();
+            while (sdr.Read())
+            {
+                ListItem item = new ListItem();
+                item.Text = sdr["name"].ToString();
+                item.Value = sdr["id"].ToString();
+                DropDownList6.Items.Add(item);
+
+            }
+            DropDownList6.Items.Insert(0, new ListItem("Select Coordinator", "0"));
+            con.Close();
         }
     }
 }
