@@ -72,9 +72,10 @@ namespace Learner_s_Board
                     LinkButton7.Visible = true; // Coordinator
                     LinkButton3.Visible = true; // logout link button
                     LinkButton4.Text = "Hello Admin";
+                    LinkButton4.Visible = true;
 
 
-                   
+
                 }
                 else if (Session["role"].Equals("coordinator"))
                 {
@@ -87,6 +88,7 @@ namespace Learner_s_Board
                     LinkButton7.Visible = false; // Coordinator
                     LinkButton3.Visible = true; // logout link button
                     LinkButton4.Text = "Hello " + Session["username"].ToString();
+                    LinkButton4.Visible = true;
 
 
 
