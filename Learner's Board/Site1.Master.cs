@@ -20,6 +20,8 @@ namespace Learner_s_Board
             LinkButton7.Visible = false; // Coordinator
             LinkButton4.Visible = false; //hellouser
             LinkButton3.Visible = false; // logout link button
+            LinkButton9.Visible = false; // Add Record
+            LinkButton10.Visible = false; // Add Certificate
             try
             {
               
@@ -34,7 +36,8 @@ namespace Learner_s_Board
                     LinkButton7.Visible = false; // Coordinator
                     LinkButton4.Visible = false; //hellouser
                     LinkButton3.Visible = false; // logout link button
-
+                    LinkButton9.Visible = false; // Add Record
+                    LinkButton10.Visible = false; // Add Certificate
 
 
 
@@ -51,6 +54,8 @@ namespace Learner_s_Board
                     LinkButton8.Visible = false; // specialization
                     LinkButton5.Visible = false; // institute
                     LinkButton7.Visible = false; // Coordinator
+                    LinkButton9.Visible = true; // Add Record
+                    LinkButton10.Visible = true; // Add Certificate
                     LinkButton3.Visible = true; // logout link button
                     LinkButton4.Text = "Hello " + Session["username"].ToString();
                     LinkButton4.Visible = true;
@@ -70,6 +75,8 @@ namespace Learner_s_Board
                     LinkButton8.Visible = false; // specialization
                     LinkButton5.Visible = true; // institute
                     LinkButton7.Visible = true; // Coordinator
+                    LinkButton9.Visible = false; // Add Record
+                    LinkButton10.Visible = false; // Add Certificate
                     LinkButton3.Visible = true; // logout link button
                     LinkButton4.Text = "Hello Admin";
                     LinkButton4.Visible = true;
@@ -86,6 +93,8 @@ namespace Learner_s_Board
                     LinkButton8.Visible = true; // specialization
                     LinkButton5.Visible = false; // institute
                     LinkButton7.Visible = false; // Coordinator
+                    LinkButton9.Visible = false; // Add Record
+                    LinkButton10.Visible = false; // Add Certificate
                     LinkButton3.Visible = true; // logout link button
                     LinkButton4.Text = "Hello " + Session["username"].ToString();
                     LinkButton4.Visible = true;
@@ -148,6 +157,16 @@ namespace Learner_s_Board
         protected void LinkButton8_Click(object sender, EventArgs e)
         {
             Response.Redirect("coordinatorspecializationmanagement.aspx");
+        }
+
+        protected void LinkButton9_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("uploadinstitutetypes.aspx");
+        }
+
+        protected void LinkButton10_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("certificateupload.aspx");
         }
     }
 }

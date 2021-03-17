@@ -38,6 +38,8 @@ namespace Learner_s_Board
                         //Response.Write("<script>alert('Login Successful');</script>");
                         Session["username"] = dr.GetValue(8).ToString();
                         Session["fullname"] = dr.GetValue(0).ToString();
+                        Session["institute_id"] = dr.GetValue(7).ToString();
+                        Session["degree_id"] = dr.GetValue(12).ToString();
                         Session["role"] = "learner";
                     }
                     Response.Redirect("homepage.aspx");

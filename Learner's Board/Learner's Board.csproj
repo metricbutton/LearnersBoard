@@ -74,6 +74,8 @@
     <Content Include="bootstrap\js\bootstrap.min.js" />
     <Content Include="bootstrap\js\jquery-3.2.1.slim.min.js" />
     <Content Include="bootstrap\js\popper.min.js" />
+    <Content Include="certificateupload.aspx" />
+    <Content Include="collegeupload.aspx" />
     <Content Include="content\toastr.css" />
     <Content Include="content\toastr.min.css" />
     <Content Include="coordinatordegreemanagement.aspx" />
@@ -82,6 +84,7 @@
     <Content Include="css\customstylesheet.css" />
     <Content Include="datatables\css\jquery.dataTables.min.css" />
     <Content Include="datatables\js\jquery.dataTables.min.js" />
+    <Content Include="fileupload.aspx" />
     <Content Include="fontawesome\attribution.js" />
     <Content Include="fontawesome\css\all.css" />
     <Content Include="fontawesome\css\all.min.css" />
@@ -1741,6 +1744,8 @@
     <Content Include="imgs\book-online.png" />
     <Content Include="imgs\books.png" />
     <Content Include="imgs\centralized.png" />
+    <Content Include="imgs\certificate.png" />
+    <Content Include="imgs\college.png" />
     <Content Include="imgs\degree.png" />
     <Content Include="imgs\coordinator.png" />
     <Content Include="imgs\digital-data.png" />
@@ -1751,6 +1756,7 @@
     <Content Include="imgs\learner.png" />
     <Content Include="imgs\library.png" />
     <Content Include="imgs\logo.png" />
+    <Content Include="imgs\school.png" />
     <Content Include="imgs\search-online.png" />
     <Content Include="imgs\sign-up.png" />
     <Content Include="imgs\student.png" />
@@ -1765,10 +1771,13 @@
     <Content Include="content\toastr.scss" />
     <Content Include="content\toastr.less" />
     <None Include="Scripts\jquery-1.6.3-vsdoc.js" />
+    <Content Include="schoolupload.aspx" />
+    <Content Include="schooluploadtypes.aspx" />
     <Content Include="Scripts\jquery-1.6.3.js" />
     <Content Include="Scripts\jquery-1.6.3.min.js" />
     <Content Include="Scripts\toastr.js" />
     <Content Include="Scripts\toastr.min.js" />
+    <Content Include="uploadinstitutetypes.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -1793,6 +1802,20 @@
     <Compile Include="adminlogin.aspx.designer.cs">
       <DependentUpon>adminlogin.aspx</DependentUpon>
     </Compile>
+    <Compile Include="certificateupload.aspx.cs">
+      <DependentUpon>certificateupload.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="certificateupload.aspx.designer.cs">
+      <DependentUpon>certificateupload.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="collegeupload.aspx.cs">
+      <DependentUpon>collegeupload.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="collegeupload.aspx.designer.cs">
+      <DependentUpon>collegeupload.aspx</DependentUpon>
+    </Compile>
     <Compile Include="coordinatordegreemanagement.aspx.cs">
       <DependentUpon>coordinatordegreemanagement.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -1813,6 +1836,13 @@
     </Compile>
     <Compile Include="coordinatorlogin.aspx.designer.cs">
       <DependentUpon>coordinatorlogin.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="fileupload.aspx.cs">
+      <DependentUpon>fileupload.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="fileupload.aspx.designer.cs">
+      <DependentUpon>fileupload.aspx</DependentUpon>
     </Compile>
     <Compile Include="forgotpassword.aspx.cs">
       <DependentUpon>forgotpassword.aspx</DependentUpon>
@@ -1850,12 +1880,33 @@
       <DependentUpon>logintypes.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="schoolupload.aspx.cs">
+      <DependentUpon>schoolupload.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="schoolupload.aspx.designer.cs">
+      <DependentUpon>schoolupload.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="schooluploadtypes.aspx.cs">
+      <DependentUpon>schooluploadtypes.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="schooluploadtypes.aspx.designer.cs">
+      <DependentUpon>schooluploadtypes.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Site1.Master.cs">
       <DependentUpon>Site1.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Site1.Master.designer.cs">
       <DependentUpon>Site1.Master</DependentUpon>
+    </Compile>
+    <Compile Include="uploadinstitutetypes.aspx.cs">
+      <DependentUpon>uploadinstitutetypes.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="uploadinstitutetypes.aspx.designer.cs">
+      <DependentUpon>uploadinstitutetypes.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
