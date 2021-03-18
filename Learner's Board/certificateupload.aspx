@@ -44,6 +44,16 @@
                         </div>
 
                         <div class="row">
+                            <div class="col-md-12">
+                                <label>Event Name</label>
+                                <div class="form-group">
+                                    <asp:TextBox CssClass="form-control" ID="TextBox4" runat="server" placeholder="Event Name"></asp:TextBox>
+                                    <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ErrorMessage="Event Name is required" ControlToValidate="TextBox1" Display="Dynamic"></asp:RequiredFieldValidator>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
                             <div class="col">
                                 <label>Date</label>
                                 <div class="form-group">
@@ -72,8 +82,14 @@
                         <div class="row">
                             <div class="col-md-12">
                                 <label>File Upload</label>
-                                <div class="form-group">
-                                    <asp:FileUpload ID="FileUpLoad1" runat="server" />
+                                <div>
+                                    <asp:FileUpload ID="FileUpLoad1" CssClass="form-control" runat="server" accept=".pdf"/>
+                                    <asp:RegularExpressionValidator
+                                        ID="FileUpLoadValidator" runat="server"
+                                        ErrorMessage="Upload PDFs only."
+                                        ValidationExpression="^(([a-zA-Z]:)|(\\{2}\w+)\$?)(\\(\w[\w].*))(.pdf)$"
+                                        ControlToValidate="FileUpload1">  
+                                    </asp:RegularExpressionValidator>
 
                                 </div>
                             </div>

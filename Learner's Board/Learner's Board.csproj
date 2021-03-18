@@ -70,6 +70,10 @@
     <Content Include="admincoordinatormanagement.aspx" />
     <Content Include="admininstitutemanagement.aspx" />
     <Content Include="adminlogin.aspx" />
+    <Content Include="approvecertificates.aspx" />
+    <Content Include="approvecollegerecords.aspx" />
+    <Content Include="approveinstitutetypes.aspx" />
+    <Content Include="approveschoolrecords.aspx" />
     <Content Include="bootstrap\css\bootstrap.min.css" />
     <Content Include="bootstrap\js\bootstrap.min.js" />
     <Content Include="bootstrap\js\jquery-3.2.1.slim.min.js" />
@@ -1801,6 +1805,34 @@
     </Compile>
     <Compile Include="adminlogin.aspx.designer.cs">
       <DependentUpon>adminlogin.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="approvecertificates.aspx.cs">
+      <DependentUpon>approvecertificates.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="approvecertificates.aspx.designer.cs">
+      <DependentUpon>approvecertificates.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="approvecollegerecords.aspx.cs">
+      <DependentUpon>approvecollegerecords.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="approvecollegerecords.aspx.designer.cs">
+      <DependentUpon>approvecollegerecords.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="approveinstitutetypes.aspx.cs">
+      <DependentUpon>approveinstitutetypes.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="approveinstitutetypes.aspx.designer.cs">
+      <DependentUpon>approveinstitutetypes.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="approveschoolrecords.aspx.cs">
+      <DependentUpon>approveschoolrecords.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="approveschoolrecords.aspx.designer.cs">
+      <DependentUpon>approveschoolrecords.aspx</DependentUpon>
     </Compile>
     <Compile Include="certificateupload.aspx.cs">
       <DependentUpon>certificateupload.aspx</DependentUpon>

@@ -49,7 +49,7 @@
                                 <label>School</label>
                                 <div class="form-group">
                                     <asp:DropDownList class="form-control" ID="DropDownList1" runat="server"></asp:DropDownList>
-                                    <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ErrorMessage="School is required" initialvalue=0 ControlToValidate="DropDownList1" Display="Dynamic"></asp:RequiredFieldValidator>
+                                    <asp:RequiredFieldValidator ID="RequiredFieldValidator2" ForeColor="Red" runat="server" ErrorMessage="School is required" initialvalue=0 ControlToValidate="DropDownList1" Display="Dynamic"></asp:RequiredFieldValidator>
 
                                 </div>
                             </div>
@@ -64,7 +64,7 @@
                                         <asp:ListItem Text="10" Value="10" />
                                         <asp:ListItem Text="12" Value="12" />
                                     </asp:DropDownList>
-                                    <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" ErrorMessage="Standard is required" initialvalue="select" ControlToValidate="DropDownList2" Display="Dynamic"></asp:RequiredFieldValidator>
+                                    <asp:RequiredFieldValidator ID="RequiredFieldValidator4" ForeColor="Red" runat="server" ErrorMessage="Standard is required" initialvalue="select" ControlToValidate="DropDownList2" Display="Dynamic"></asp:RequiredFieldValidator>
 
                                 </div>
                             </div>
@@ -75,7 +75,12 @@
                                 <label>File Upload</label>
                                 <div>
                                     <asp:FileUpload ID="FileUpLoad1" CssClass="form-control" runat="server" />
-
+                                    <asp:RegularExpressionValidator
+                                        ID="FileUpLoadValidator" runat="server"
+                                        ErrorMessage="Upload PDFs only."
+                                        ValidationExpression="^(([a-zA-Z]:)|(\\{2}\w+)\$?)(\\(\w[\w].*))(.pdf)$"
+                                        ControlToValidate="FileUpload1">  
+                                    </asp:RegularExpressionValidator>
                                 </div>
                             </div>
 

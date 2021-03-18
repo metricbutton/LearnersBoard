@@ -22,6 +22,8 @@ namespace Learner_s_Board
             LinkButton3.Visible = false; // logout link button
             LinkButton9.Visible = false; // Add Record
             LinkButton10.Visible = false; // Add Certificate
+            LinkButton11.Visible = false; // Approve Records
+            LinkButton12.Visible = false; // Approve Certificates
             try
             {
               
@@ -38,6 +40,8 @@ namespace Learner_s_Board
                     LinkButton3.Visible = false; // logout link button
                     LinkButton9.Visible = false; // Add Record
                     LinkButton10.Visible = false; // Add Certificate
+                    LinkButton11.Visible = false; // Approve Records
+                    LinkButton12.Visible = false; // Approve Certificates
 
 
 
@@ -56,6 +60,8 @@ namespace Learner_s_Board
                     LinkButton7.Visible = false; // Coordinator
                     LinkButton9.Visible = true; // Add Record
                     LinkButton10.Visible = true; // Add Certificate
+                    LinkButton11.Visible = false; // Approve Records
+                    LinkButton12.Visible = false; // Approve Certificates
                     LinkButton3.Visible = true; // logout link button
                     LinkButton4.Text = "Hello " + Session["username"].ToString();
                     LinkButton4.Visible = true;
@@ -77,6 +83,8 @@ namespace Learner_s_Board
                     LinkButton7.Visible = true; // Coordinator
                     LinkButton9.Visible = false; // Add Record
                     LinkButton10.Visible = false; // Add Certificate
+                    LinkButton11.Visible = false; // Approve Records
+                    LinkButton12.Visible = false; // Approve Certificates
                     LinkButton3.Visible = true; // logout link button
                     LinkButton4.Text = "Hello Admin";
                     LinkButton4.Visible = true;
@@ -95,6 +103,8 @@ namespace Learner_s_Board
                     LinkButton7.Visible = false; // Coordinator
                     LinkButton9.Visible = false; // Add Record
                     LinkButton10.Visible = false; // Add Certificate
+                    LinkButton11.Visible = true; // Approve Records
+                    LinkButton12.Visible = true; // Approve Certificates
                     LinkButton3.Visible = true; // logout link button
                     LinkButton4.Text = "Hello " + Session["username"].ToString();
                     LinkButton4.Visible = true;
@@ -167,6 +177,16 @@ namespace Learner_s_Board
         protected void LinkButton10_Click(object sender, EventArgs e)
         {
             Response.Redirect("certificateupload.aspx");
+        }
+
+        protected void LinkButton11_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("approveinstitutetypes.aspx");
+        }
+
+        protected void LinkButton12_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("approvecertificates.aspx");
         }
     }
 }

@@ -7,6 +7,7 @@ using System.IO;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
+using System.Web.UI.HtmlControls;
 using System.Web.UI.WebControls;
 
 namespace Learner_s_Board
@@ -41,12 +42,15 @@ namespace Learner_s_Board
                         con.Open();
                     }
 
-                    SqlCommand cmd = new SqlCommand("INSERT INTO certificate_master_tbl(learner_username, date,type,status,document_path) values(@learner_username,@date,@type,@status,@document_path)", con);
+                    SqlCommand cmd = new SqlCommand("INSERT INTO certificate_master_tbl(learner_username,learner_fullname, date,type,status,coordinator_id,event_name,document_path) values(@learner_username,@learner_fullname,@date,@type,@status,@coordinator_id,@event_name,@document_path)", con);
 
                     cmd.Parameters.AddWithValue("@learner_username", TextBox1.Text.Trim());
+                    cmd.Parameters.AddWithValue("@learner_fullname", Session["fullname"].ToString());
                     cmd.Parameters.AddWithValue("@date", TextBox2.Text.Trim());
                     cmd.Parameters.AddWithValue("@type", DropDownList2.SelectedItem.Value);
                     cmd.Parameters.AddWithValue("@status", "Pending");
+                    cmd.Parameters.AddWithValue("@coordinator_id", Session["coordinator_id"].ToString());
+                    cmd.Parameters.AddWithValue("@event_name", TextBox4.Text.Trim());
                     cmd.Parameters.AddWithValue("@document_path", filePath);
 
                     cmd.ExecuteNonQuery();
@@ -64,6 +68,11 @@ namespace Learner_s_Board
                 //Label1.Text = "No File Uploaded.";
                 Page.ClientScript.RegisterStartupScript(this.GetType(), "toastr_message", "toastr.error('No File Uploaded')", true);
             }
+            FileUpLoadValidator.IsValid = true;
+            HtmlMeta oScript = new HtmlMeta();
+            oScript.Attributes.Add("http-equiv", "REFRESH");
+            oScript.Attributes.Add("content", "5; url='https://localhost:44312/certificateupload.aspx'");
+            Page.Header.Controls.Add(oScript);
         }
         
     }

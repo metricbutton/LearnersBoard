@@ -70,7 +70,13 @@
                             <div class="col-md-12">
                                 <label>File Upload</label>
                                 <div>
-                                    <asp:FileUpload ID="FileUpLoad1" CssClass="form-control" runat="server" />
+                                    <asp:FileUpload ID="FileUpLoad1" CssClass="form-control" runat="server" accept=".pdf"/>
+                                    <asp:RegularExpressionValidator
+                                        ID="FileUpLoadValidator" runat="server"
+                                        ErrorMessage="Upload PDFs only."
+                                        ValidationExpression="^(([a-zA-Z]:)|(\\{2}\w+)\$?)(\\(\w[\w].*))(.pdf)$"
+                                        ControlToValidate="FileUpload1">  
+                                    </asp:RegularExpressionValidator>
 
                                 </div>
                             </div>

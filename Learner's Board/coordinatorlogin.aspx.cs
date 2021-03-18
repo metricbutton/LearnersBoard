@@ -38,6 +38,7 @@ namespace Learner_s_Board
                         //Response.Write("<script>alert('Login Successful');</script>");
                         Session["username"] = dr.GetValue(4).ToString();
                         Session["fullname"] = dr.GetValue(1).ToString();
+                        Session["coordinator_id"] = dr.GetValue(0).ToString();
                         Session["role"] = "coordinator";
                     }
                     Response.Redirect("homepage.aspx");

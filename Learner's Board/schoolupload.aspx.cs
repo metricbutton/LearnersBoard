@@ -8,6 +8,7 @@ using System.Linq;
 using System.Threading;
 using System.Web;
 using System.Web.UI;
+using System.Web.UI.HtmlControls;
 using System.Web.UI.WebControls;
 
 namespace Learner_s_Board
@@ -66,7 +67,7 @@ namespace Learner_s_Board
                 {
                     ListItem item = new ListItem();
                     item.Text = sdr1["name"].ToString();
-                    item.Value = sdr1["institute_id"].ToString();
+                    item.Value = sdr1["name"].ToString();
                     DropDownList1.Items.Add(item);
 
                 }
@@ -136,17 +137,20 @@ namespace Learner_s_Board
                         con.Open();
                     }
 
-                    SqlCommand cmd = new SqlCommand("INSERT INTO school_document_master_tbl(learner_username, institute_id,standard,status,document_path) values(@learner_username,@institute_id,@standard,@status,@document_path)", con);
+                    SqlCommand cmd = new SqlCommand("INSERT INTO school_document_master_tbl(learner_username,learner_fullname, institute_name,standard,status,coordinator_id,document_path) values(@learner_username,@learner_fullname,@institute_name,@standard,@status,@coordinator_id,@document_path)", con);
 
                     cmd.Parameters.AddWithValue("@learner_username", TextBox1.Text.Trim());
-                    cmd.Parameters.AddWithValue("@institute_id", DropDownList1.SelectedItem.Value);
+                    cmd.Parameters.AddWithValue("@learner_fullname", Session["fullname"].ToString());
+                    cmd.Parameters.AddWithValue("@institute_name", DropDownList1.SelectedItem.Value);
                     cmd.Parameters.AddWithValue("@standard", DropDownList2.SelectedItem.Value);
                     cmd.Parameters.AddWithValue("@status", "Pending");
+                    cmd.Parameters.AddWithValue("@coordinator_id", Session["coordinator_id"].ToString());
                     cmd.Parameters.AddWithValue("@document_path", filePath);
 
                     cmd.ExecuteNonQuery();
                     con.Close();
                     Page.ClientScript.RegisterStartupScript(this.GetType(), "toastr_message", "toastr.success('File added Successfully')", true);
+                 
                     //Response.Write("<script>alert('Coordinator added Successfully');</script>");
                 }
                 catch (Exception ex)
@@ -159,6 +163,11 @@ namespace Learner_s_Board
                 //Label1.Text = "No File Uploaded.";
                 Page.ClientScript.RegisterStartupScript(this.GetType(), "toastr_message", "toastr.error('No File Uploaded')", true);
             }
+            FileUpLoadValidator.IsValid = true;
+            HtmlMeta oScript = new HtmlMeta();
+            oScript.Attributes.Add("http-equiv", "REFRESH");
+            oScript.Attributes.Add("content", "5; url='https://localhost:44312/schoolupload.aspx'");
+            Page.Header.Controls.Add(oScript);
         }
     }
 }

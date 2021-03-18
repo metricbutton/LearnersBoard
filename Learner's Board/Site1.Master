@@ -103,6 +103,14 @@
                         </li>
 
                         <li class="nav-item active">
+                            <asp:LinkButton class="nav-link" ID="LinkButton11" runat="server" OnClick="LinkButton11_Click" CausesValidation="False">Approve Records</asp:LinkButton>
+                        </li>
+
+                        <li class="nav-item active">
+                            <asp:LinkButton class="nav-link" ID="LinkButton12" runat="server" OnClick="LinkButton12_Click" CausesValidation="False">Approve Certificates</asp:LinkButton>
+                        </li>
+
+                        <li class="nav-item active">
                             <asp:LinkButton class="nav-link" ID="LinkButton4" runat="server" CausesValidation="False">Hello user</asp:LinkButton>
 
                         </li>
