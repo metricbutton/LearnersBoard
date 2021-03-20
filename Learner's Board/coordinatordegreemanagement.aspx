@@ -126,6 +126,7 @@
                         <div class="row">
                             <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:learnersboardDBConnectionString3 %>" SelectCommand="SELECT * FROM [degree_master_tbl]"></asp:SqlDataSource>
                             <div class="col">
+                                <div class="table-responsive">
                                 <asp:GridView class="table table-striped table-bordered" ID="GridView1" runat="server" AutoGenerateColumns="False" DataKeyNames="degree_id" DataSourceID="SqlDataSource1">
                                     <Columns>
                                         <asp:BoundField DataField="degree_id" HeaderText="degree_id" InsertVisible="False" ReadOnly="True" SortExpression="degree_id" />
@@ -134,6 +135,7 @@
                                         <asp:BoundField DataField="degree_term" HeaderText="degree_term" SortExpression="degree_term" />
                                     </Columns>
                                 </asp:GridView>
+                                    </div>
                             </div>
                         </div>
 

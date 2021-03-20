@@ -179,16 +179,18 @@
                         <div class="row">
                             <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:learnersboardDBConnectionString %>" SelectCommand="SELECT * FROM [institute_master_tbl]"></asp:SqlDataSource>
                             <div class="col">
-                                <asp:GridView class="table table-striped table-bordered" ID="GridView1" runat="server" AutoGenerateColumns="False" DataSourceID="SqlDataSource1" DataKeyNames="institute_id">
-                                    <Columns>
-                                        <asp:BoundField DataField="institute_id" HeaderText="institute_id" SortExpression="institute_id" InsertVisible="False" ReadOnly="True" />
-                                        <asp:BoundField DataField="name" HeaderText="name" SortExpression="name" />
-                                        <asp:BoundField DataField="affiliation" HeaderText="affiliation" SortExpression="affiliation" />
-                                        <asp:BoundField DataField="type" HeaderText="type" SortExpression="type" />
-                                        <asp:BoundField DataField="city" HeaderText="city" SortExpression="city" />
-                                        <asp:BoundField DataField="state" HeaderText="state" SortExpression="state" />
-                                    </Columns>
-                                </asp:GridView>
+                                <div class="table-responsive">
+                                    <asp:GridView class="table table-striped table-bordered" ID="GridView1" runat="server" AutoGenerateColumns="False" DataSourceID="SqlDataSource1" DataKeyNames="institute_id">
+                                        <Columns>
+                                            <asp:BoundField DataField="institute_id" HeaderText="institute_id" SortExpression="institute_id" InsertVisible="False" ReadOnly="True" />
+                                            <asp:BoundField DataField="name" HeaderText="name" SortExpression="name" />
+                                            <asp:BoundField DataField="affiliation" HeaderText="affiliation" SortExpression="affiliation" />
+                                            <asp:BoundField DataField="type" HeaderText="type" SortExpression="type" />
+                                            <asp:BoundField DataField="city" HeaderText="city" SortExpression="city" />
+                                            <asp:BoundField DataField="state" HeaderText="state" SortExpression="state" />
+                                        </Columns>
+                                    </asp:GridView>
+                                </div>
                             </div>
                         </div>
 

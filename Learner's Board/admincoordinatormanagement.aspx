@@ -150,16 +150,18 @@
                         <div class="row">
                             <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:learnersboardDBConnectionString2 %>" SelectCommand="SELECT * FROM [coordinator_master_tbl]"></asp:SqlDataSource>
                             <div class="col">
-                                <asp:GridView class="table table-striped table-bordered" ID="GridView1" runat="server" AutoGenerateColumns="False" DataSourceID="SqlDataSource1" DataKeyNames="id">
-                                    <Columns>
-                                        <asp:BoundField DataField="id" HeaderText="id" SortExpression="id" InsertVisible="False" ReadOnly="True" />
-                                        <asp:BoundField DataField="name" HeaderText="name" SortExpression="name" />
-                                        <asp:BoundField DataField="institute_id" HeaderText="institute_id" SortExpression="institute_id" />
-                                        <asp:BoundField DataField="email" HeaderText="email" SortExpression="email" />
-                                        <asp:BoundField DataField="username" HeaderText="username" SortExpression="username" />
-                                        <asp:BoundField DataField="password" HeaderText="password" SortExpression="password" />
-                                    </Columns>
-                                </asp:GridView>
+                                <div class="table-responsive">
+                                    <asp:GridView class="table table-striped table-bordered" ID="GridView1" runat="server" AutoGenerateColumns="False" DataSourceID="SqlDataSource1" DataKeyNames="id">
+                                        <Columns>
+                                            <asp:BoundField DataField="id" HeaderText="id" SortExpression="id" InsertVisible="False" ReadOnly="True" />
+                                            <asp:BoundField DataField="name" HeaderText="name" SortExpression="name" />
+                                            <asp:BoundField DataField="institute_id" HeaderText="institute_id" SortExpression="institute_id" />
+                                            <asp:BoundField DataField="email" HeaderText="email" SortExpression="email" />
+                                            <asp:BoundField DataField="username" HeaderText="username" SortExpression="username" />
+                                            <asp:BoundField DataField="password" HeaderText="password" SortExpression="password" />
+                                        </Columns>
+                                    </asp:GridView>
+                                </div>
                             </div>
                         </div>
 

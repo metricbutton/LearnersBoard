@@ -112,7 +112,9 @@
                         </div>
                         <div class="row">
                             <div class="col">
-                                <asp:GridView ID="GridView1" class="table table-striped table-bordered" runat="server"></asp:GridView>
+                                <div class="table-responsive">
+                                    <asp:GridView ID="GridView1" class="table table-striped table-bordered" runat="server"></asp:GridView>
+                                </div>
                             </div>
                         </div>
                     </div>

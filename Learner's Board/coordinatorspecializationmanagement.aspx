@@ -115,13 +115,15 @@
                         <div class="row">
                             <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:learnersboardDBConnectionString4 %>" SelectCommand="SELECT * FROM [specialization_master_tbl]"></asp:SqlDataSource>
                             <div class="col">
-                                <asp:GridView class="table table-striped table-bordered" ID="GridView1" runat="server" AutoGenerateColumns="False" DataKeyNames="specialization_id" DataSourceID="SqlDataSource1">
-                                    <Columns>
-                                        <asp:BoundField DataField="specialization_id" HeaderText="specialization_id" InsertVisible="False" ReadOnly="True" SortExpression="specialization_id" />
-                                        <asp:BoundField DataField="specialization_name" HeaderText="specialization_name" SortExpression="specialization_name" />
-                                        <asp:BoundField DataField="degree_id" HeaderText="degree_id" SortExpression="degree_id" />
-                                    </Columns>
-                                </asp:GridView>
+                                <div class="table-responsive">
+                                    <asp:GridView class="table table-striped table-bordered" ID="GridView1" runat="server" AutoGenerateColumns="False" DataKeyNames="specialization_id" DataSourceID="SqlDataSource1">
+                                        <Columns>
+                                            <asp:BoundField DataField="specialization_id" HeaderText="specialization_id" InsertVisible="False" ReadOnly="True" SortExpression="specialization_id" />
+                                            <asp:BoundField DataField="specialization_name" HeaderText="specialization_name" SortExpression="specialization_name" />
+                                            <asp:BoundField DataField="degree_id" HeaderText="degree_id" SortExpression="degree_id" />
+                                        </Columns>
+                                    </asp:GridView>
+                                </div>
                             </div>
                         </div>
 
