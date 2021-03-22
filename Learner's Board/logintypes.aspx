@@ -43,7 +43,7 @@
                 <div class="card bg-danger" style="width: 400px">
                     <img class="card-img-top" src="imgs/admin.png" alt="Card image" style="width: 100%">
                     <div class="card-body text-center">
-                        <a href="adminlogin.aspx" class="btn btn-success stretched-link">Admin Login</a>
+                        <a href="recruiterlogin.aspx" class="btn btn-success stretched-link">Recruiter Login</a>
                     </div>
                 </div>
 

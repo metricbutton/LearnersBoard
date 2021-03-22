@@ -10,7 +10,7 @@ using System.Web.UI.WebControls;
 
 namespace Learner_s_Board
 {
-    public partial class learnerlogin : System.Web.UI.Page
+    public partial class recruiterlogin : System.Web.UI.Page
     {
         string strcon = ConfigurationManager.ConnectionStrings["con"].ConnectionString;
         protected void Page_Load(object sender, EventArgs e)
@@ -28,7 +28,7 @@ namespace Learner_s_Board
                     con.Open();
 
                 }
-                SqlCommand cmd = new SqlCommand("select * from learner_master_tbl where username='" + TextBox1.Text.Trim() + "' AND password='" + TextBox2.Text.Trim() + "'", con);
+                SqlCommand cmd = new SqlCommand("select * from recruiter_master_tbl where recruiter_username='" + TextBox1.Text.Trim() + "' AND recruiter_password='" + TextBox2.Text.Trim() + "'", con);
                 SqlDataReader dr = cmd.ExecuteReader();
                 if (dr.HasRows)
                 {
@@ -36,13 +36,8 @@ namespace Learner_s_Board
                     {
                         Page.ClientScript.RegisterStartupScript(this.GetType(), "toastr_message", "toastr.success('Login Successful')", true);
                         //Response.Write("<script>alert('Login Successful');</script>");
-                        Session["username"] = dr.GetValue(8).ToString();
-                        Session["fullname"] = dr.GetValue(0).ToString();
-                        Session["institute_id"] = dr.GetValue(7).ToString();
-                        Session["degree_id"] = dr.GetValue(12).ToString();
-                        Session["coordinator_id"] = dr.GetValue(13).ToString();
-                        Session["learner_id"] = dr.GetValue(10).ToString();
-                        Session["role"] = "learner";
+                        Session["recruiter_name"] = dr.GetValue(1).ToString();
+                        Session["role"] = "recruiter";
                     }
                     Response.Redirect("homepage.aspx");
                 }
@@ -58,6 +53,10 @@ namespace Learner_s_Board
 
             }
         }
-    
+
+        protected void Button2_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

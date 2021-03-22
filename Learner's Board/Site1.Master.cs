@@ -24,6 +24,8 @@ namespace Learner_s_Board
             LinkButton10.Visible = false; // Add Certificate
             LinkButton11.Visible = false; // Approve Records
             LinkButton12.Visible = false; // Approve Certificates
+            LinkButton14.Visible = false; // View Resume(Recruiter)
+            LinkButton16.Visible = false; // View Resume(Learner)
             try
             {
               
@@ -42,6 +44,8 @@ namespace Learner_s_Board
                     LinkButton10.Visible = false; // Add Certificate
                     LinkButton11.Visible = false; // Approve Records
                     LinkButton12.Visible = false; // Approve Certificates
+                    LinkButton14.Visible = false; // View Resume(Recruiter)
+                    LinkButton16.Visible = false; // View Resume(Learner)
 
 
 
@@ -62,6 +66,8 @@ namespace Learner_s_Board
                     LinkButton10.Visible = true; // Add Certificate
                     LinkButton11.Visible = false; // Approve Records
                     LinkButton12.Visible = false; // Approve Certificates
+                    LinkButton14.Visible = false; // View Resume(Recruiter)
+                    LinkButton16.Visible = true; // View Resume(Learner)
                     LinkButton3.Visible = true; // logout link button
                     LinkButton4.Text = "Hello " + Session["username"].ToString();
                     LinkButton4.Visible = true;
@@ -85,6 +91,8 @@ namespace Learner_s_Board
                     LinkButton10.Visible = false; // Add Certificate
                     LinkButton11.Visible = false; // Approve Records
                     LinkButton12.Visible = false; // Approve Certificates
+                    LinkButton14.Visible = false; // View Resume(Recruiter)
+                    LinkButton16.Visible = false; // View Resume(Learner)
                     LinkButton3.Visible = true; // logout link button
                     LinkButton4.Text = "Hello Admin";
                     LinkButton4.Visible = true;
@@ -105,8 +113,33 @@ namespace Learner_s_Board
                     LinkButton10.Visible = false; // Add Certificate
                     LinkButton11.Visible = true; // Approve Records
                     LinkButton12.Visible = true; // Approve Certificates
+                    LinkButton14.Visible = false; // View Resume(Recruiter)
+                    LinkButton16.Visible = false; // View Resume(Learner)
                     LinkButton3.Visible = true; // logout link button
                     LinkButton4.Text = "Hello " + Session["username"].ToString();
+                    LinkButton4.Visible = true;
+
+
+
+
+                }
+                else if (Session["role"].Equals("recruiter"))
+                {
+                    LinkButton1.Visible = false; // user login link button
+                    LinkButton2.Visible = false; // sign up link button
+
+                    LinkButton6.Visible = false; // degree
+                    LinkButton8.Visible = false; // specialization
+                    LinkButton5.Visible = false; // institute
+                    LinkButton7.Visible = false; // Coordinator
+                    LinkButton9.Visible = false; // Add Record
+                    LinkButton10.Visible = false; // Add Certificate
+                    LinkButton11.Visible = false; // Approve Records
+                    LinkButton12.Visible = false; // Approve Certificates
+                    LinkButton14.Visible = true; // View Resume(Recruiter)
+                    LinkButton16.Visible = false; // View Resume(Learner)
+                    LinkButton3.Visible = true; // logout link button
+                    LinkButton4.Text = "Hello " + Session["recruiter_name"].ToString();
                     LinkButton4.Visible = true;
 
 
@@ -187,6 +220,16 @@ namespace Learner_s_Board
         protected void LinkButton12_Click(object sender, EventArgs e)
         {
             Response.Redirect("approvecertificates.aspx");
+        }
+
+        protected void LinkButton14_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("learneridresume.aspx");
+        }
+
+        protected void LinkButton16_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("resume.aspx");
         }
     }
 }
