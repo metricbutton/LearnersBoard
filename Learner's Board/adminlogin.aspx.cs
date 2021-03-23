@@ -49,7 +49,7 @@ namespace Learner_s_Board
             }
             catch (Exception ex)
             {
-
+                Response.Write("<script>alert('" + ex.Message + "');</script>");
             }
 
         }

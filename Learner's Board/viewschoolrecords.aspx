@@ -19,7 +19,7 @@
                         <div class="row">
                             <div class="col">
                                 <center>
-                           <img width="100px" src="imgs/approved.png" />
+                           <img width="100px" src="imgs/view.png" />
                         </center>
                             </div>
                         </div>

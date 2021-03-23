@@ -57,7 +57,7 @@
                                 <label>Coordinator Name</label>
                                 <div class="form-group">
                                     <asp:TextBox CssClass="form-control" ID="TextBox2" runat="server" placeholder="Coordinator Name"></asp:TextBox>
-                                    <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ErrorMessage="Name is required" ControlToValidate="TextBox2" Display="Dynamic"></asp:RequiredFieldValidator>
+                                    <asp:RequiredFieldValidator ID="RequiredFieldValidator2" ForeColor="Red" runat="server" ErrorMessage="Name is required" ControlToValidate="TextBox2" Display="Dynamic"></asp:RequiredFieldValidator>
 
                                 </div>
                             </div>
@@ -69,7 +69,7 @@
                                 <label>Institute Name</label>
                                 <div class="form-group">
                                     <asp:DropDownList class="form-control" ID="DropDownList1" runat="server"></asp:DropDownList>
-                                    <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ErrorMessage="Institute is required" ControlToValidate="DropDownList1" Display="Dynamic" InitialValue="Select Institute"></asp:RequiredFieldValidator>
+                                    <asp:RequiredFieldValidator ID="RequiredFieldValidator3" ForeColor="Red" runat="server" ErrorMessage="Institute is required" ControlToValidate="DropDownList1" Display="Dynamic" InitialValue="0"></asp:RequiredFieldValidator>
 
                                 </div>
                             </div>
@@ -81,7 +81,7 @@
                                 <label>Email ID</label>
                                 <div class="form-group">
                                     <asp:TextBox CssClass="form-control" ID="TextBox6" runat="server" placeholder="Email ID" TextMode="Email"></asp:TextBox>
-                                    <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" ErrorMessage="Email is required" ControlToValidate="TextBox6" Display="Dynamic"></asp:RequiredFieldValidator>
+                                    <asp:RequiredFieldValidator ID="RequiredFieldValidator4" ForeColor="Red" runat="server" ErrorMessage="Email is required" ControlToValidate="TextBox6" Display="Dynamic"></asp:RequiredFieldValidator>
 
                                 </div>
                             </div>

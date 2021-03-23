@@ -65,7 +65,7 @@ namespace Learner_s_Board
                 }
                 else
                 {
-                    Page.ClientScript.RegisterStartupScript(this.GetType(), "toastr_message", "toastr.warning('Invalid Institute ID')", true);
+                    Page.ClientScript.RegisterStartupScript(this.GetType(), "toastr_message", "toastr.warning('Invalid Document ID')", true);
                     //Response.Write("<script>alert('Invalid Institute ID');</script>");
                 }
 

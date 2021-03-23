@@ -17,43 +17,47 @@ namespace Learner_s_Board
         {
             if(!IsPostBack)
             {
-            SqlConnection con = new SqlConnection(strcon);
-            con.Open();
 
-            SqlCommand com = new SqlCommand("select institute_id,name from institute_master_tbl where type='College'", con);  
+                DropDownList4.Items.Insert(0, new ListItem("Select Specialization", "0"));
+                DropDownList6.Items.Insert(0, new ListItem("Select Coordinator", "0"));
 
-            SqlDataReader sdr = com.ExecuteReader();
-            while (sdr.Read())
-            {
-                ListItem item = new ListItem();
-                item.Text = sdr["name"].ToString();
-                item.Value = sdr["institute_id"].ToString();
-                DropDownList2.Items.Add(item);
+                SqlConnection con = new SqlConnection(strcon);
+                con.Open();
 
-            }
+                SqlCommand com = new SqlCommand("select institute_id,name from institute_master_tbl where type='College'", con);  
 
+                SqlDataReader sdr = com.ExecuteReader();
+                while (sdr.Read())
+                {
+                    ListItem item = new ListItem();
+                    item.Text = sdr["name"].ToString();
+                    item.Value = sdr["institute_id"].ToString();
+                    DropDownList2.Items.Add(item);
 
-            con.Close();
-            DropDownList2.Items.Insert(0, new ListItem("Select Institute", "0"));
-
-            SqlConnection con1 = new SqlConnection(strcon);
-            con1.Open();
-
-            SqlCommand com1 = new SqlCommand("select degree_id,degree_name from degree_master_tbl", con1);
-
-            SqlDataReader sdr1 = com1.ExecuteReader();
-            while (sdr1.Read())
-            {
-                ListItem item1 = new ListItem();
-                item1.Text = sdr1["degree_name"].ToString();
-                item1.Value = sdr1["degree_id"].ToString();
-                DropDownList3.Items.Add(item1);
-
-            }
+                }
 
 
-            con1.Close();
-            DropDownList3.Items.Insert(0, new ListItem("Select Degree", "0"));
+                con.Close();
+                DropDownList2.Items.Insert(0, new ListItem("Select Institute", "0"));
+
+                SqlConnection con1 = new SqlConnection(strcon);
+                con1.Open();
+
+                SqlCommand com1 = new SqlCommand("select degree_id,degree_name from degree_master_tbl", con1);
+
+                SqlDataReader sdr1 = com1.ExecuteReader();
+                while (sdr1.Read())
+                {
+                    ListItem item1 = new ListItem();
+                    item1.Text = sdr1["degree_name"].ToString();
+                    item1.Value = sdr1["degree_id"].ToString();
+                    DropDownList3.Items.Add(item1);
+
+                }
+
+
+                con1.Close();
+                DropDownList3.Items.Insert(0, new ListItem("Select Degree", "0"));
             }
 
         }
@@ -62,7 +66,7 @@ namespace Learner_s_Board
         {
             if (checkMemberExists())
             {
-                Page.ClientScript.RegisterStartupScript(this.GetType(), "toastr_message", "toastr.warning('Member Already Exist with this Username, try other Username')", true);
+                Page.ClientScript.RegisterStartupScript(this.GetType(), "toastr_message", "toastr.warning('Learner Already Exist with this Username, try other Username')", true);
                 //Response.Write("<script>alert('Member Already Exist with this Member ID, try other ID');</script>");
             }
             else
@@ -146,7 +150,7 @@ namespace Learner_s_Board
 
                 cmd.ExecuteNonQuery();
                 con.Close();
-                Page.ClientScript.RegisterStartupScript(this.GetType(), "toastr_message", "toastr.success('Sign Up Successful. Go to User Login to Login')", true);
+                Page.ClientScript.RegisterStartupScript(this.GetType(), "toastr_message", "toastr.success('Sign Up Successful. Go to Learner Login to Login')", true);
                 //Response.Write("<script>alert('Sign Up Successful. Go to User Login to Login');</script>");
 
             }
@@ -209,6 +213,11 @@ namespace Learner_s_Board
             }
             DropDownList6.Items.Insert(0, new ListItem("Select Coordinator", "0"));
             con.Close();
+        }
+
+        protected void Button2_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("learnerlogin.aspx");
         }
     }
 }

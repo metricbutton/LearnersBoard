@@ -43,7 +43,7 @@ namespace Learner_s_Board
                 }
                 else
                 {
-                    Page.ClientScript.RegisterStartupScript(this.GetType(), "toastr_message", "toastr.warning('Invalid Institute ID')", true);
+                    Page.ClientScript.RegisterStartupScript(this.GetType(), "toastr_message", "toastr.warning('Invalid Document ID')", true);
                     //Response.Write("<script>alert('Invalid Institute ID');</script>");
                 }
 
@@ -118,20 +118,57 @@ namespace Learner_s_Board
             TextBox8.Text = "";
         }
 
-        protected void Button2_Click(object sender, EventArgs e)
+        protected void Button2_Click(object sender, EventArgs e) //View
         {
-            //string FilePath = Server.MapPath("C:\temp\e-Notes_PDF_All-Units_27042019074900AM.pdf");
-            string path = Convert.ToString(HiddenField1.Value);
-            //string FilePath = @"C:\temp\e-Notes_PDF_All-Units_27042019074900AM.pdf";
-            string FilePath = path;
-            WebClient User = new WebClient();
-            Byte[] FileBuffer = User.DownloadData(FilePath);
-            if (FileBuffer != null)
+            try
             {
-                Response.ContentType = "application/pdf";
-                Response.AddHeader("content-length", FileBuffer.Length.ToString());
-                Response.BinaryWrite(FileBuffer);
+                SqlConnection con = new SqlConnection(strcon);
+                if (con.State == ConnectionState.Closed)
+                {
+                    con.Open();
+                }
+                SqlCommand cmd = new SqlCommand("SELECT * from school_document_master_tbl where document_id='" + TextBox1.Text.Trim() + "';", con);
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                DataTable dt = new DataTable();
+                da.Fill(dt);
+
+                if (dt.Rows.Count >= 1)
+                {
+                    HiddenField1.Value = dt.Rows[0][7].ToString();
+                    string path = Convert.ToString(HiddenField1.Value);
+                    string FilePath = path;
+                    WebClient User = new WebClient();
+                    Byte[] FileBuffer = User.DownloadData(FilePath);
+                    if (FileBuffer != null)
+                    {
+                        Response.ContentType = "application/pdf";
+                        Response.AddHeader("content-length", FileBuffer.Length.ToString());
+                        Response.BinaryWrite(FileBuffer);
+                    }
+                }
+                else
+                {
+                    Page.ClientScript.RegisterStartupScript(this.GetType(), "toastr_message", "toastr.warning('Invalid Document ID')", true);
+                    //Response.Write("<script>alert('Invalid Institute ID');</script>");
+                }
+
+
             }
+            catch (Exception ex)
+            {
+                Response.Write("<script>alert('" + ex.Message + "');</script>");
+
+            }
+            //string path = Convert.ToString(HiddenField1.Value);
+            //string FilePath = path;
+            //WebClient User = new WebClient();
+            //Byte[] FileBuffer = User.DownloadData(FilePath);
+            //if (FileBuffer != null)
+            //{
+            //    Response.ContentType = "application/pdf";
+            //    Response.AddHeader("content-length", FileBuffer.Length.ToString());
+            //    Response.BinaryWrite(FileBuffer);
+            //}
         }
 
         void updateGridView()

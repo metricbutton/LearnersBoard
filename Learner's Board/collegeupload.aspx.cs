@@ -122,9 +122,6 @@ namespace Learner_s_Board
                 string name = Session["username"].ToString() + DropDownList2.SelectedItem.Value + ext;
                 string filePath = @"C:\temp\College\" + name;
                 FileUpLoad1.SaveAs(@"C:\temp\College\" + name);
-                //string filePath = @"C:\temp\" + FileUpLoad1.FileName;
-                //FileUpLoad1.SaveAs(@"C:\temp\" + FileUpLoad1.FileName);
-                //Label1.Text = "File Uploaded: " + FileUpLoad1.FileName;
                 Page.ClientScript.RegisterStartupScript(this.GetType(), "toastr_message", "toastr.success('File Uploaded')", true);
                 try
                 {

@@ -54,7 +54,7 @@
                                 <label>Institute Name</label>
                                 <div class="form-group">
                                     <asp:TextBox CssClass="form-control" ID="TextBox2" runat="server" placeholder="Institute Name"></asp:TextBox>
-                                     <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ErrorMessage="Institute Name is required" ControlToValidate="TextBox2" Display="Dynamic"></asp:RequiredFieldValidator>
+                                     <asp:RequiredFieldValidator ID="RequiredFieldValidator2" ForeColor="Red" runat="server" ErrorMessage="Institute Name is required" ControlToValidate="TextBox2" Display="Dynamic"></asp:RequiredFieldValidator>
 
                                 </div>
                             </div>
@@ -66,7 +66,7 @@
                                 <label>Affiliation</label>
                                 <div class="form-group">
                                     <asp:TextBox CssClass="form-control" ID="TextBox4" runat="server" placeholder="Affiliation"></asp:TextBox>
-                                    <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" ErrorMessage="Affiliation is required" ControlToValidate="TextBox4" Display="Dynamic"></asp:RequiredFieldValidator>
+                                    <asp:RequiredFieldValidator ID="RequiredFieldValidator4" ForeColor="Red" runat="server" ErrorMessage="Affiliation is required" ControlToValidate="TextBox4" Display="Dynamic"></asp:RequiredFieldValidator>
 
                                 </div>
                             </div>
@@ -79,7 +79,7 @@
                                         <asp:ListItem Text="School" Value="School" />
                                         <asp:ListItem Text="College" Value="College" />
                                         </asp:DropDownList>
-                                       <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ErrorMessage="Type is required" ControlToValidate="DropDownList1" Display="Dynamic" InitialValue="Select Type"></asp:RequiredFieldValidator>
+                                       <asp:RequiredFieldValidator ID="RequiredFieldValidator3" ForeColor="Red" runat="server" ErrorMessage="Type is required" ControlToValidate="DropDownList1" Display="Dynamic" InitialValue="Select Type"></asp:RequiredFieldValidator>
                                     </div>
                                 </div>
 
@@ -91,7 +91,7 @@
                                 <label>City</label>
                                 <div class="form-group">
                                     <asp:TextBox CssClass="form-control" ID="TextBox3" runat="server" placeholder="City"></asp:TextBox>
-                                    <asp:RequiredFieldValidator ID="RequiredFieldValidator5" runat="server" ErrorMessage="City is required" ControlToValidate="TextBox3" Display="Dynamic"></asp:RequiredFieldValidator>
+                                    <asp:RequiredFieldValidator ID="RequiredFieldValidator5" ForeColor="Red" runat="server" ErrorMessage="City is required" ControlToValidate="TextBox3" Display="Dynamic"></asp:RequiredFieldValidator>
 
                                 </div>
                             </div>
@@ -132,7 +132,7 @@
                                         <asp:ListItem Text="Uttarakhand" Value="Uttarakhand" />
                                         <asp:ListItem Text="West Bengal" Value="West Bengal" />
                                         </asp:DropDownList>
-                                        <asp:RequiredFieldValidator ID="RequiredFieldValidator6" runat="server" ErrorMessage="State is required" ControlToValidate="DropDownList2" Display="Dynamic" InitialValue="Select State"></asp:RequiredFieldValidator>
+                                        <asp:RequiredFieldValidator ID="RequiredFieldValidator6" ForeColor="Red" runat="server" ErrorMessage="State is required" ControlToValidate="DropDownList2" Display="Dynamic" InitialValue="Select State"></asp:RequiredFieldValidator>
                                     </div>
                                 </div>
 
@@ -141,15 +141,15 @@
 
 
                         <div class="row">
-                            <div class="col-4">
+                            <div class="col-6">
                                 <asp:Button ID="Button2" class="btn btn-lg btn-block btn-success" runat="server" Text="Add" OnClick="Button2_Click" />
                             </div>
-                            <div class="col-4">
+                            <div class="col-6">
                                 <asp:Button ID="Button3" class="btn btn-lg btn-block btn-warning" runat="server" Text="Update" OnClick="Button3_Click" />
                             </div>
-                            <div class="col-4">
+                            <%--<div class="col-4">
                                 <asp:Button ID="Button4" class="btn btn-lg btn-block btn-danger" runat="server" Text="Delete" OnClick="Button4_Click" CausesValidation="False" />
-                            </div>
+                            </div>--%>
                         </div>
 
 

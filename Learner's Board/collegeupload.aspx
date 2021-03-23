@@ -39,7 +39,7 @@
                                 <label>Username</label>
                                 <div class="form-group">
                                     <asp:TextBox CssClass="form-control" ID="TextBox1" runat="server" placeholder="Username"></asp:TextBox>
-                                    <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ErrorMessage="Username is required" ControlToValidate="TextBox1" Display="Dynamic"></asp:RequiredFieldValidator>
+                                    <asp:RequiredFieldValidator ID="RequiredFieldValidator1" ForeColor="Red" runat="server" ErrorMessage="Username is required" ControlToValidate="TextBox1" Display="Dynamic"></asp:RequiredFieldValidator>
                                 </div>
                             </div>
                         </div>
@@ -49,7 +49,7 @@
                                 <label>College</label>
                                 <div class="form-group">
                                     <asp:DropDownList class="form-control" ID="DropDownList1" runat="server"></asp:DropDownList>
-                                    <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ErrorMessage="College is required" initialvalue="0" ControlToValidate="DropDownList1" Display="Dynamic"></asp:RequiredFieldValidator>
+                                    <asp:RequiredFieldValidator ID="RequiredFieldValidator2" ForeColor="Red" runat="server" ErrorMessage="College is required" initialvalue="0" ControlToValidate="DropDownList1" Display="Dynamic"></asp:RequiredFieldValidator>
 
                                 </div>
                             </div>
@@ -60,7 +60,7 @@
                                 <label>Semester</label>
                                 <div class="form-group">
                                     <asp:DropDownList class="form-control" ID="DropDownList2" runat="server"></asp:DropDownList>
-                                    <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" ErrorMessage="Semester is required" initialvalue="0" ControlToValidate="DropDownList2" Display="Dynamic"></asp:RequiredFieldValidator>
+                                    <asp:RequiredFieldValidator ID="RequiredFieldValidator4" ForeColor="Red" runat="server" ErrorMessage="Semester is required" initialvalue="0" ControlToValidate="DropDownList2" Display="Dynamic"></asp:RequiredFieldValidator>
 
                                 </div>
                             </div>

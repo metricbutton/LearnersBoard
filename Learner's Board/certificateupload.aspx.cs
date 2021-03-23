@@ -26,13 +26,9 @@ namespace Learner_s_Board
             if (FileUpLoad1.HasFile)
             {
                 string ext = Path.GetExtension(FileUpLoad1.FileName);
-                //string name = Session["username"].ToString() + DropDownList2.SelectedItem.Value + ext;
                 string name =  TextBox2.Text + Session["username"].ToString() + DateTime.Now.ToString("yyyyMMddHHmmssfff") + ext;
                 string filePath = @"C:\temp\Certificate\" + name;
                 FileUpLoad1.SaveAs(@"C:\temp\Certificate\" + name);
-                //string filePath = @"C:\temp\" + FileUpLoad1.FileName;
-                //FileUpLoad1.SaveAs(@"C:\temp\" + FileUpLoad1.FileName);
-                //Label1.Text = "File Uploaded: " + FileUpLoad1.FileName;
                 Page.ClientScript.RegisterStartupScript(this.GetType(), "toastr_message", "toastr.success('File Uploaded')", true);
                 try
                 {

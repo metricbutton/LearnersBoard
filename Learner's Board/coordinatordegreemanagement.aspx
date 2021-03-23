@@ -55,7 +55,7 @@
                                 <label>Degree Name</label>
                                 <div class="form-group">
                                     <asp:TextBox CssClass="form-control" ID="TextBox2" runat="server" placeholder="Degree Name"></asp:TextBox>
-                                    <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ErrorMessage="Name is required" ControlToValidate="TextBox2" Display="Dynamic"></asp:RequiredFieldValidator>
+                                    <asp:RequiredFieldValidator ID="RequiredFieldValidator2" ForeColor="Red" runat="server" ErrorMessage="Name is required" ControlToValidate="TextBox2" Display="Dynamic"></asp:RequiredFieldValidator>
 
                                 </div>
                             </div>
@@ -67,7 +67,7 @@
                                 <label>Short Name</label>
                                 <div class="form-group">
                                     <asp:TextBox CssClass="form-control" ID="TextBox4" runat="server" placeholder="Short Name" ></asp:TextBox>
-                                    <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ErrorMessage="Short name is required" ControlToValidate="TextBox4" Display="Dynamic"></asp:RequiredFieldValidator>
+                                    <asp:RequiredFieldValidator ID="RequiredFieldValidator3" ForeColor="Red" runat="server" ErrorMessage="Short name is required" ControlToValidate="TextBox4" Display="Dynamic"></asp:RequiredFieldValidator>
 
                                 </div>
                             </div>
@@ -79,7 +79,7 @@
                                 <label>Term</label>
                                 <div class="form-group">
                                     <asp:TextBox CssClass="form-control" ID="TextBox6" runat="server" placeholder="Term in years"></asp:TextBox>
-                                    <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" ErrorMessage="Email is required" ControlToValidate="TextBox6" Display="Dynamic"></asp:RequiredFieldValidator>
+                                    <asp:RequiredFieldValidator ID="RequiredFieldValidator4" ForeColor="Red" runat="server" ErrorMessage="Term is required" ControlToValidate="TextBox6" Display="Dynamic"></asp:RequiredFieldValidator>
 
                                 </div>
                             </div>
@@ -88,15 +88,15 @@
 
 
                         <div class="row">
-                            <div class="col-4">
+                            <div class="col-6">
                                 <asp:Button ID="Button2" class="btn btn-lg btn-block btn-success" runat="server" Text="Add" OnClick="Button2_Click" />
                             </div>
-                            <div class="col-4">
+                            <div class="col-6">
                                 <asp:Button ID="Button3" class="btn btn-lg btn-block btn-warning" runat="server" Text="Update" OnClick="Button3_Click" />
                             </div>
-                            <div class="col-4">
+                            <%--<div class="col-4">
                                 <asp:Button ID="Button4" class="btn btn-lg btn-block btn-danger" runat="server" Text="Delete" Onclick="Button4_Click"/>
-                            </div>
+                            </div>--%>
                         </div>
 
 

@@ -56,7 +56,7 @@
                                 <label>Specialization Name</label>
                                 <div class="form-group">
                                     <asp:TextBox CssClass="form-control" ID="TextBox2" runat="server" placeholder="Specialization Name"></asp:TextBox>
-                                    <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ErrorMessage="Name is required" ControlToValidate="TextBox2" Display="Dynamic"></asp:RequiredFieldValidator>
+                                    <asp:RequiredFieldValidator ID="RequiredFieldValidator2" ForeColor="Red" runat="server" ErrorMessage="Specialization Name is required" ControlToValidate="TextBox2" Display="Dynamic"></asp:RequiredFieldValidator>
 
                                 </div>
                             </div>
@@ -68,7 +68,7 @@
                                 <label>Degree Name</label>
                                 <div class="form-group">
                                     <asp:DropDownList class="form-control" ID="DropDownList1" runat="server"></asp:DropDownList>
-                                    <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ErrorMessage="Degree Name is required" ControlToValidate="DropDownList1" Display="Dynamic" InitialValue="Select Degree"></asp:RequiredFieldValidator>
+                                    <asp:RequiredFieldValidator ID="RequiredFieldValidator1" ForeColor="Red" runat="server" ErrorMessage="Degree Name is required" ControlToValidate="DropDownList1" Display="Dynamic" InitialValue="0"></asp:RequiredFieldValidator>
 
                                 </div>
                             </div>

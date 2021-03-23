@@ -52,7 +52,6 @@ namespace Learner_s_Board
                 {
 
                     string path = Convert.ToString(dt.Rows[0][0]);
-                    //string FilePath = @"C:\temp\e-Notes_PDF_All-Units_27042019074900AM.pdf";
                     string FilePath = path;
                     WebClient User = new WebClient();
                     Byte[] FileBuffer = User.DownloadData(FilePath);
@@ -65,7 +64,7 @@ namespace Learner_s_Board
                 }
                 else
                 {
-                    Page.ClientScript.RegisterStartupScript(this.GetType(), "toastr_message", "toastr.warning('Invalid Institute ID')", true);
+                    Page.ClientScript.RegisterStartupScript(this.GetType(), "toastr_message", "toastr.warning('Invalid Document ID')", true);
                     //Response.Write("<script>alert('Invalid Institute ID');</script>");
                 }
 

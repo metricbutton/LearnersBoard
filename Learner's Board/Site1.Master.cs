@@ -26,6 +26,7 @@ namespace Learner_s_Board
             LinkButton12.Visible = false; // Approve Certificates
             LinkButton14.Visible = false; // View Resume(Recruiter)
             LinkButton16.Visible = false; // View Resume(Learner)
+            LinkButton17.Visible = false; // Change Coordinator
             try
             {
               
@@ -46,6 +47,7 @@ namespace Learner_s_Board
                     LinkButton12.Visible = false; // Approve Certificates
                     LinkButton14.Visible = false; // View Resume(Recruiter)
                     LinkButton16.Visible = false; // View Resume(Learner)
+                    LinkButton17.Visible = false; // Change Coordinator
 
 
 
@@ -68,6 +70,7 @@ namespace Learner_s_Board
                     LinkButton12.Visible = false; // Approve Certificates
                     LinkButton14.Visible = false; // View Resume(Recruiter)
                     LinkButton16.Visible = true; // View Resume(Learner)
+                    LinkButton17.Visible = true; // Change Coordinator
                     LinkButton3.Visible = true; // logout link button
                     LinkButton4.Text = "Hello " + Session["username"].ToString();
                     LinkButton4.Visible = true;
@@ -93,6 +96,7 @@ namespace Learner_s_Board
                     LinkButton12.Visible = false; // Approve Certificates
                     LinkButton14.Visible = false; // View Resume(Recruiter)
                     LinkButton16.Visible = false; // View Resume(Learner)
+                    LinkButton17.Visible = false; // Change Coordinator
                     LinkButton3.Visible = true; // logout link button
                     LinkButton4.Text = "Hello Admin";
                     LinkButton4.Visible = true;
@@ -115,6 +119,7 @@ namespace Learner_s_Board
                     LinkButton12.Visible = true; // Approve Certificates
                     LinkButton14.Visible = false; // View Resume(Recruiter)
                     LinkButton16.Visible = false; // View Resume(Learner)
+                    LinkButton17.Visible = false; // Change Coordinator
                     LinkButton3.Visible = true; // logout link button
                     LinkButton4.Text = "Hello " + Session["username"].ToString();
                     LinkButton4.Visible = true;
@@ -138,6 +143,7 @@ namespace Learner_s_Board
                     LinkButton12.Visible = false; // Approve Certificates
                     LinkButton14.Visible = true; // View Resume(Recruiter)
                     LinkButton16.Visible = false; // View Resume(Learner)
+                    LinkButton17.Visible = false; // Change Coordinator
                     LinkButton3.Visible = true; // logout link button
                     LinkButton4.Text = "Hello " + Session["recruiter_name"].ToString();
                     LinkButton4.Visible = true;
@@ -149,7 +155,6 @@ namespace Learner_s_Board
             }
             catch (Exception ex)
             {
-
             }
 
 
@@ -230,6 +235,11 @@ namespace Learner_s_Board
         protected void LinkButton16_Click(object sender, EventArgs e)
         {
             Response.Redirect("resume.aspx");
+        }
+
+        protected void LinkButton17_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("changecoordinator.aspx");
         }
     }
 }

@@ -79,6 +79,7 @@
     <Content Include="bootstrap\js\jquery-3.2.1.slim.min.js" />
     <Content Include="bootstrap\js\popper.min.js" />
     <Content Include="certificateupload.aspx" />
+    <Content Include="changecoordinator.aspx" />
     <Content Include="collegeupload.aspx" />
     <Content Include="content\toastr.css" />
     <Content Include="content\toastr.min.css" />
@@ -1760,6 +1761,7 @@
     <Content Include="imgs\learner.png" />
     <Content Include="imgs\library.png" />
     <Content Include="imgs\logo.png" />
+    <Content Include="imgs\recruiter.png" />
     <Content Include="imgs\school.png" />
     <Content Include="imgs\search-online.png" />
     <Content Include="imgs\sign-up.png" />
@@ -1768,6 +1770,7 @@
     <Content Include="imgs\uppercover.jpg" />
     <Content Include="imgs\bottomcover.png" />
     <Content Include="imgs\user.png" />
+    <Content Include="imgs\view.png" />
     <Content Include="imgs\youtube.png" />
     <Content Include="learneridresume.aspx" />
     <Content Include="learnerlogin.aspx" />
@@ -1846,6 +1849,13 @@
     </Compile>
     <Compile Include="certificateupload.aspx.designer.cs">
       <DependentUpon>certificateupload.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="changecoordinator.aspx.cs">
+      <DependentUpon>changecoordinator.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="changecoordinator.aspx.designer.cs">
+      <DependentUpon>changecoordinator.aspx</DependentUpon>
     </Compile>
     <Compile Include="collegeupload.aspx.cs">
       <DependentUpon>collegeupload.aspx</DependentUpon>

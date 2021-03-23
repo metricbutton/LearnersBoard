@@ -75,41 +75,6 @@ namespace Learner_s_Board
 
                 con1.Close();
                 DropDownList1.Items.Insert(0, new ListItem("Select School", "0"));
-
-                //For School
-                //SqlConnection con = new SqlConnection(strcon);
-                //if (con.State == ConnectionState.Closed)
-                //{
-                //    con.Open();
-
-                //}
-                //String name = Session["username"].ToString();
-                //SqlCommand cmd = new SqlCommand("select standard from school_document_master_tbl where learner_username='" + name + "' ORDER BY standard DESC", con);
-                //SqlDataAdapter da = new SqlDataAdapter(cmd);
-                //DataTable dt = new DataTable();
-                //da.Fill(dt);
-                
-
-                //if (dt != null)
-                //{
-                //    if (dt.Rows.Count > 0)
-                //    {
-                //        int standard = (int)dt.Rows[0][0];
-                //        if (standard == 10)
-                //        {
-                //            DropDownList2.Items.FindByValue("10").Attributes.Add("Disabled", "Disabled");
-                //        }
-                //        else if (standard == 12)
-                //        {
-                //            DropDownList2.Items.FindByValue("10").Attributes.Add("Disabled", "Disabled");
-                //            DropDownList2.Items.FindByValue("12").Attributes.Add("Disabled", "Disabled");
-                //        }
-                //    }
-                //    else
-                //    {
-                //        DropDownList2.Items.FindByValue("12").Attributes.Add("Disabled", "Disabled");
-                //    }
-                //}
             }
 
             

@@ -36,8 +36,8 @@
                         <div class="row">
                                 <div class="col">
                                     <div class="form-group">
-                                        <label>Admin ID</label>
-                                        <asp:TextBox CssClass="form-control" ID="TextBox1" runat="server" placeholder="Admin ID"></asp:TextBox>
+                                        <label>Admin Username</label>
+                                        <asp:TextBox CssClass="form-control" ID="TextBox1" runat="server" placeholder="Admin Username"></asp:TextBox>
                                         <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ErrorMessage="ID is required" ControlToValidate="TextBox1" Display="Dynamic"></asp:RequiredFieldValidator>
                                     </div>
 
